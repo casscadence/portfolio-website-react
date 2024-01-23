@@ -37,7 +37,7 @@ const app = express();
     
 })()
 
-app.listen(process.env.DB_PORT, () => {console.log('Server started on port railway')});
+app.listen(process.env.PORT || 3000, () => {console.log('Server started on port railway')});
 
 /* if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
