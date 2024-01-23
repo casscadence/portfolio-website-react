@@ -1,6 +1,6 @@
 {
   "name": "client",
-  "homepage": "https://ariellebartee.me/",
+  "homepage": ".",
   "version": "0.1.0",
   "proxy": "http://localhost:5000",
   "private": true,
