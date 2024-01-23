@@ -74,7 +74,7 @@ const Project = ({scrollPercent, setScrollPercent}) => {
     <>
       <div className='container project-page'>
         <div className='fa-back-arrow'><FontAwesomeIcon icon={faArrowLeftLong} onClick={()=>navigate(-1)} /></div>
-        <p className='project-number'>0{data.number + 1}/0{data.length}</p>
+        {/* <p className='project-number'>0{data.number + 1}/0{data.length}</p> */}
         <div ref={scrollWindow} className='text-container' onScroll={onScroll}>
           <div className='text-zone'>
             {/* <ProjectLoad descRef={descRef} detRef={detRef} descVisible={descVisible} detVisible={detVisible} projectData={data} projectId={projectId} imgIdx={imgIdx} subIndex={subIndex} addIndex={addIndex} direction={direction} /> */}
