@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import AboutPhoto from '../../assets/images/about-photo.png'
+import CV from '../../assets/images/resume/barteearielle_resume.pdf';
 
 const About = ({scrollPercent, setScrollPercent}) => {
   const [loaderName, setLoaderName] = useState('loader');
@@ -37,7 +38,7 @@ const About = ({scrollPercent, setScrollPercent}) => {
   }
 
   const fetchResume = () => {
-    fetch('../../assets/images/Resume/barteearielle_resume.pdf').then(response => {
+    fetch(CV).then(response => {
       response.blob().then(blob => {
           const fileURL = window.URL.createObjectURL(blob);
           let alink = document.createElement('a');
@@ -52,7 +53,14 @@ const About = ({scrollPercent, setScrollPercent}) => {
     <>
       <div ref={scrollWindow} className='container about-page' onScroll={onScroll}>
         <div ref={topRef} className="text-zone">
-          <div className='about-text'>
+        <div className='about-text'>
+          <ul>
+            <li className='about-list active'><h1 className='about-title'>About</h1></li>
+            <li className='about-list'><h1 className='about-title'>Skills</h1></li>
+            <li className='about-list'><h1 className='about-title'>Tools</h1></li>
+          </ul>
+        </div>
+          <div className='about-desc'>
             <h2>
               About
             </h2>
@@ -80,9 +88,6 @@ const About = ({scrollPercent, setScrollPercent}) => {
                 <p className='button-border-link' >Download CV</p>
               </div>
             </div>
-          </div>
-          <div className='about-photo'>
-            <img src={AboutPhoto} alt=''/>
           </div>
         </div>
         <footer ref={footerRef} id='footer' className='footer'>

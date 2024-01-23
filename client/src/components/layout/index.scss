@@ -160,6 +160,41 @@ img {
       }
     }
 
+    .about-list {
+      list-style-type: none;
+      margin: 20px 0;
+      font-size: 25px;
+      color: lightgray;
+
+      &.active {
+        display: list-item;
+        list-style-type: square;
+        color: black;
+        font-size: 50px;
+
+        .about-title {
+          color: black;
+          font-size: 50px;
+        }
+      }
+
+      .about-title {
+        cursor: pointer;
+        font-size: 25px;
+        color: lightgray;
+        transition: color .2s;
+  
+        &::after {
+          content: none;
+        }
+
+        &:hover {
+          color: black;
+          transition: color .4s;
+        }
+      }
+    }
+
     p {
       font-size: 17px;
       font-family: sans-serif;
@@ -187,12 +222,12 @@ img {
       flex-wrap: no-wrap;
       padding: 100px;
 
-      .about-text, .about-photo {
+      .about-text, .about-photo, .about-desc {
         display: inline;
       }
 
       .about-text {
-        padding: 30px 70px;
+        padding: 30px 100px;
       }
 
       .about-photo {  
@@ -206,6 +241,12 @@ img {
           animation: slideInUp 2s ease;
           animation-fill-mode: forwards;
         }
+      }
+
+      .about-desc {  
+        padding: 30px 50px;
+        width: 60%;
+        overflow-y: clip;
       }
     }
 
@@ -269,7 +310,11 @@ img {
           position: relative;
           padding: 0;
           margin: 50px auto;
-          float: none;
+ 
+        }
+
+        .about-desc {
+          float: right;
         }
 
         .about-photo {   
