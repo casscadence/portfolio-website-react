@@ -1,0 +1,516 @@
+.nav-bar {
+    pointer-events: none;
+    background-color: transparent;
+    width: 120px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: block;
+    transition: background-color .1s;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 0;
+      width: 2.5px;
+      background: red;
+      z-index: 5;
+    }
+
+    @for $i from 1 through 102 {
+      &._#{$i}{
+        &:before {
+          height: #{$i} + '%';
+        }
+      }
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 100px;
+      width: 2px;
+      margin: 2.25vh;
+      height: 96vh;      
+      background-color: black;
+      transition: 300ms transform ease 100ms;
+      transform: scaleY(0);
+      transform-origin: center;
+    }
+
+    &.active-scroll-border {      
+      &:after {
+        transition: 300ms transform ease 300ms;
+        transform: scaleY(1);
+      }
+    }
+
+    .logo {
+      position: absolute;
+      bottom: 0;
+      display: block;
+      width: 100%;
+      margin: 25px auto;
+
+      &:hover {
+        img {
+          animation: rubberBand 1s;
+        }
+      }
+      
+      img {
+        width: 60px;
+        transition: 0.5s;
+        display: block;
+        margin: auto;
+        //padding-left: 5px;
+      }
+    }
+
+    /************************ Nav **********************************/
+
+    a {
+      pointer-events: all;
+    }
+
+    .menu-cover {
+      pointer-events: all;
+      position: absolute;
+      background: black;
+      width: 100vw;
+      height: 100vh;
+      margin-left: 120px;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: .4s;
+      transition-delay: .6s;
+      z-index: -2;
+
+      &.active {
+        left: 0;
+        opacity: 1;
+        transform: scaleX(1);
+        transition: transform .4s;
+        transition-delay: 0s;
+      }
+    }
+
+    nav {
+      pointer-events: all;
+      position: absolute;
+      top: 0;
+      height: 100vh;
+      width: 100vw;
+      margin-left: 120px;
+      padding: 22vh 0;
+      background-color: white;
+      transform: translateX(-2000px);
+      transition: transform .5s ease;
+      transition-delay: .4s;
+      margin: auto 3vw auto auto;
+      z-index: -2;
+
+      ul {
+        display: block;
+        height: 100vh;
+        margin-left: 50px;
+
+        li {
+          display: block;
+          margin: 40px 0;
+          height: 70px;
+          overflow: hidden;
+
+          &:nth-child(1) {
+            div > a:before {
+              content: 'HOME';
+            }
+          }
+          &:nth-child(2) {
+            div > a:before {
+              content: 'ABOUT';
+            }
+          }
+          &:nth-child(3) {
+            div > a:before {
+              content: 'PORTFOLIO';
+            }
+          }
+          &:nth-child(4) {
+            div > a:before {
+              content: 'CONTACT';
+            }
+          }
+
+          div {
+            transform: translateY(100px);
+            transition: transform .4s ease-out;
+          }
+
+          div > a {
+            text-decoration: none;   
+            width: 50px;
+            margin: 20px 8vw;
+            letter-spacing: 2px;
+            font-size: 45px;
+            transition: .4s;
+            position: relative;
+            color: lightgray;
+            text-decoration: none;    
+            text-transform: uppercase; 
+  
+            @for $i from 5 through 1 {
+              &:nth-child(#{$i}) {
+                transition-delay: #{($i * .25)}s;
+              }
+            }
+  
+            &:before {
+              content: '';
+              position: absolute;
+              top: 0;
+              right: 0;
+              direction: rtl;
+              height: 100%;
+              width: 0;
+              color: black;
+              overflow: hidden;
+              transition: .3s;
+            }
+      
+            &:after {
+              content: '';
+              position: absolute;
+              bottom: -5px;
+              left: -1px;
+              height: 4px;
+              width: 100%;
+              direction: rtl;
+              background: red;
+              transform: scaleX(0);
+              transform-origin: left;
+              transition: transform .3s;
+            }
+  
+            &:hover {
+              transition: all 0.4s ease-out; 
+      
+              &:before {
+                left: 0;
+                direction: ltr;
+                width: 100%;
+                transition: width .3s;
+              }
+      
+              &:after {
+                transform: scaleX(1);
+                transition: transform .3s;
+                transform-origin: right;
+              }
+            }
+          }
+        }
+      }
+
+      .nav-image {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 40vw;
+        overflow: hidden;
+
+        .img-cover {
+          position: absolute;
+          background-color: white;
+          height: 100vh;
+          width: 700px;
+          z-index: 2;
+          transform: scaleX(0);
+          transform-origin: right;
+          transition: transform .4s ease;
+
+          &.next-img {
+            transform-origin: left;
+            transform: scaleX(1);
+            transition: transform .4s ease;
+          }
+        }
+
+        img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          opacity: 0;
+          transition: opacity .4s;
+        }
+      }
+    }
+
+    .active-nav {
+      transform: translateX(0);
+      transition: transform .5s ease;
+      transition-delay: .1s;
+      margin: auto;
+
+      ul {
+        &:hover > li:not(:hover){
+          a {
+            color: lightgray;
+          }
+        }
+
+        li {
+          @for $i from 1 through 35 {
+            &:nth-child(#{$i}) > div {
+              transform: translateY(0);
+              transition: transform .4s ease-out;
+              transition-delay: #{($i * .05) + .3}s;
+            }
+          }
+        }
+      }
+
+      .nav-image {
+        img {
+          opacity: 1;
+          transition: opacity .5s;
+          transition-delay: .5s;
+        }
+      }
+    }
+
+    /************************ Nav Hamburger ************************/
+
+    .nav-ham {
+      pointer-events: all;
+      cursor: pointer;
+      display: block;
+      width: 25px;
+      margin: 40px auto;
+      z-index: 2;
+      overflow: hidden;
+    }
+    .bar {
+      width: 1.5rem;
+      height: 3px;
+      display: block;
+      padding: 0;
+      margin: 7px 0;
+      transition: 0.3s;
+      transition-delay: .35s;
+      background-color: black;
+    }
+    .bar:nth-child(1),
+    .bar:nth-child(2),
+    .bar:nth-child(3)
+    {
+      width: 100%;
+    }
+    .cross {
+      .cross-bar
+      {
+        position: absolute;
+        top: 57px;
+        width: 25px;
+        background: black;
+        height: 3px;
+        transition: transform .3s;
+      }
+  
+      .cross-bar:nth-child(1)
+      {
+        transform: scale(0) rotateZ(-45deg);
+      }
+  
+      .cross-bar:nth-child(2)
+      {
+        transform: scale(0) rotateZ(45deg);
+      }
+    }
+    .active .bar:nth-child(2) {
+      transform: translateX(50px);
+      transition: transform .3s;
+    }
+    .active .bar:nth-child(1),
+    .active .bar:nth-child(3) {
+      width: 0;
+      transition: .3s;
+    } 
+    .active .cross {
+      .cross-bar {
+        transition: transform .3s;
+        transition-delay: .35s;
+      }
+      .cross-bar:nth-child(1)
+      {
+        transform: scale(1) rotateZ(-45deg);
+      }
+      .cross-bar:nth-child(2)
+      {
+        transform: scale(1) rotateZ(45deg);
+      }
+    } 
+    .active {
+      right: 0;
+      transition: 0.2s ease;
+
+      &:hover {
+        .cross {
+          .cross-bar {
+            background-color: #DE1F0D;
+          }
+        }
+      }
+    }
+  }
+  
+@media (max-width: 1000px) {
+  .nav-bar {
+    width: 100vw;
+    height: 80px;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    background-color: white;
+    transition: background-color .1s;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      height: 2.5px;
+      width: 0;
+      background: red;
+      z-index: 5;
+    }
+
+    @for $i from 1 through 102 {
+      &._#{$i}{
+        &:before {
+          height: 2.5px;
+          width: #{$i} + '%';
+        }
+      }
+    } 
+
+    &:after {
+      top: 61px;
+      left: 0;
+      width: 96vw;
+      height: 2px;      
+      transform: scaleX(0);
+      transition: 300ms transform ease 100ms;
+    }
+  
+    &.scroll-border, &.active-scroll-border {  
+      &:after {
+        transition: 100ms transform ease 300ms;
+        transform: scaleX(1);
+      }
+    }
+
+    .logo {
+      opacity: 1;
+      position: relative;
+      display: flex;
+      z-index: 2;
+      height: 100%;
+      margin: 0 20px;
+      
+      img {
+        width: 120px;
+        transition: 0.5s;
+      }
+    }
+
+    .menu-cover {
+      margin-left: 0;
+      margin-top: 80px;
+      transform: scaleY(0);
+      transform-origin: top;
+
+      &.active {
+        transform-origin: top;
+        transform: scaleY(1);
+      }
+    }
+
+    nav {
+      margin-left: 0;
+      transform: translateY(-2000px);
+
+      .nav-image {
+        height: 0;
+        width: 0;
+  
+        .img-cover {
+          height: 0;
+          width: 0;
+        }
+  
+        img {
+          width: 0;
+          height: 0;
+        }
+      }
+
+      ul {
+        width: 95%;
+        margin: auto;
+        padding: 50px 0;
+
+        li {
+          margin: auto;
+          text-align: center;
+          height: 120px;
+
+          div > a {
+            margin: 0 40px;
+            font-size: 35px;
+            transition: .4s;
+          }
+        }
+      }
+    }
+
+    .active-nav {
+      transform: translateY(0);
+
+      ul {
+        li {
+          @for $i from 1 through 35 {
+            &:nth-child(#{$i}) > div {
+              transition-delay: #{($i * .05) + .38}s;
+            }
+          }
+        }
+      }
+    }
+
+    .nav-ham {
+      margin: auto 40px auto auto;
+
+      .bar {
+        margin: 5px 0;
+      }
+    }
+    .cross {
+      position: absolute;
+      top: 0;
+      .cross-bar
+      {
+        position: absolute;
+        top: 0;
+        margin: 39px 0;
+      }
+    }
+  }
+}
