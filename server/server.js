@@ -2,13 +2,11 @@ const express = require('express');
 const { createPool } = require('mysql');
 const app = express();
 
+const urlDB = `mysql://root:E-3A5333c6GghGAFhhh3g3d2c434Ab6C@viaduct.proxy.rlwy.net:35738/railway`;
+
 (async () => {
     const pool = createPool({
-      host: 'localhost',
-      user: 'root',
-      password: 'StarryLimit44!',
-      database: 'portfolio_projects',
-      connectionLimit: 10
+      urlDB
     })
   
     const projectData = await new Promise((resolve) => {
