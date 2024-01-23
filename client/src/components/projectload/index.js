@@ -11,7 +11,7 @@ const ProjectLoad = ({ descRef, detRef, descVisible, detVisible, textAnim, proje
     {title: 'Boom Bots', date: '2017', desc: 'Boom Bots is a fast-paced arena shooter where the only type of weapon is a grenade customizable by the player. Choose how your grenades travel, how they detonate, and what type of explosion they cause with an added variety of movement styles at your disposal.', type: 'Single player, first person, 3D-shooter', tools: 'Unity, Visual Studio, Maya, Photoshop, Illustrator', contribution: 'Created all environment models, created props (catwalk, wires, pipes, metal beam lights, door sensors), created emission maps, created textures (all environment & props), upgraded texture quality for all game textures, created logo, created and designed itch.io page'},
     {title: 'Cornucoopia', date: '2015', desc: 'A quick, competitive rogue-like board game where hungry, (un)lucky foxes try to steal not-so-defenseless chickens.', type: 'Multiplayer, physical board game', tools: 'Photoshop, Illustrator, 3D Printer', contribution: "Created all cards & characters, and contributed to game's mechanics"}];
 
-    const projectData = projectDataObjects.filter(project => {return project.title === projectId.replace(/-/g, ' ')});
+    const projectData = projectDataObjects.filter(project => {return project.title === projectId});
 
     return (
         <>
