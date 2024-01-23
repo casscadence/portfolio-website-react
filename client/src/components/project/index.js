@@ -13,7 +13,7 @@ const useFetch = (url) => {
     fetch(url)
     .then(res => res.json())
     .then(json => {
-      setData({ title: [json.title.includes('e2i') ? json.title.replace(/-/g, ' ').replace('e2i', 'e2i : ') : json.title.replace(/-/g, ' ') ], date: json.date, desc: json.desc, type: json.type, tools: json.tools, contribution: json.contribution, number: json.number, length: json.length})
+      setData({ id: json.id, title: [json.title.includes('e2i') ? json.title.replace(/-/g, ' ').replace('e2i', 'e2i : ') : json.title.replace(/-/g, ' ') ], date: json.date, desc: json.desc, type: json.type, tools: json.tools, contribution: json.contribution, number: json.number, length: json.length})
     })
   },[url]);
   

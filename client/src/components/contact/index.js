@@ -215,7 +215,7 @@ const Contact = ({scrollPercent, setScrollPercent}) => {
           </div>
         </div>
         <footer ref={footerRef} id='footer' className='footer'>
-          Website © Arielle Bartee - All Rights Reserved
+          AB Portfolio - 2023 © Arielle Bartee
         </footer>
       </div>
     </>

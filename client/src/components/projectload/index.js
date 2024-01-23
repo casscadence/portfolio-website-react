@@ -37,7 +37,7 @@ const ProjectLoad = ({ descRef, detRef, descVisible, detVisible, textAnim, proje
                 </div>
             </div>
             <footer id='footer' className='footer'>
-                Website © Arielle Bartee - All Rights Reserved
+                AB Portfolio - 2023 © Arielle Bartee
             </footer>
         </>
     )

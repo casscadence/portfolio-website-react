@@ -56,7 +56,7 @@ const Portfolio = ({scrollPercent, setScrollPercent}) => {
           />          
         </div>
         <footer ref={footerRef} id='footer' className='footer'>
-          Website © Arielle Bartee - All Rights Reserved
+          AB Portfolio - 2023 © Arielle Bartee
         </footer>
       </div>
       <div className={scrollPercent == 0 && windowWidth < 1100 ? 'arrow arrow-height invisible' : 'arrow arrow-height in-visible'}><img src={require(`../../assets/icons/downarrow.png`)} alt='' /></div>

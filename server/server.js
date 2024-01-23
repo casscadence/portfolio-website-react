@@ -21,6 +21,7 @@ const app = express();
       for(let i=0; i<=projectData.length-1; i++) {
         if(projectData[i].project_title === req.params.projectId){
           res.json({ 
+            id: projectData[i].project_id,
             title: projectData[i].project_title,
             date: projectData[i].project_date,
             desc: projectData[i].project_desc,
