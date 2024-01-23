@@ -3,7 +3,7 @@ import { useInView} from 'react-intersection-observer'
 import { useParams, useNavigate } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons'
-import ProjectLoad from '../ProjectLoad'
+import ProjectLoad from '../projectload'
 import './index.scss'
 
 const useFetch = (url) => {

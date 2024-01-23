@@ -1,5 +1,5 @@
 import React from 'react'
-import ProjectImages from '../ProjectImages'
+import ProjectImages from '../projectimages'
 
 const ProjectLoad = ({ descRef, detRef, descVisible, detVisible, textAnim, projectData, projectId, imgIdx, subIndex, addIndex, direction }) => {
 

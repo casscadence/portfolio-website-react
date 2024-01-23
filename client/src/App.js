@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Home from './components/Home'
-import About from './components/About'
-import Contact from './components/Contact'
-import Layout from './components/Layout'
-import './App.scss'
-import Portfolio from './components/Portfolio'
-import Project from './components/Project'
-import AnimatedLoader from './components/AnimatedLoader'
+import Home from './components/home'
+import About from './components/about'
+import Contact from './components/contact'
+import Layout from './components/layout'
+import './app.scss'
+import Portfolio from './components/portfolio'
+import Project from './components/project'
+import AnimatedLoader from './components/animatedloader'
 
 function App() {
 

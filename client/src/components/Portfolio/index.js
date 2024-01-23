@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import LoadImages from './LoadImages'
+import LoadImages from './loadimages'
 import './index.scss'
 
 const Portfolio = ({scrollPercent, setScrollPercent}) => {
