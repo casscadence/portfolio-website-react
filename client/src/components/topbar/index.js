@@ -89,7 +89,7 @@ const Topbar = ({scrollPercent}) => {
         </ul>
         <div className='nav-image'>
           <div className={`img-cover ${IMGanim}`}></div>
-          <img className='prev-img' src={require(`../../assets/images/${prevIMGurl.current}`)} alt='' />
+          <img className='prev-img' src={require(`../../assets/images/${prevIMGurl.current.toLowerCase()}`)} alt='' />
         </div>
       </nav>
 
