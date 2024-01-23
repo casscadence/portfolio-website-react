@@ -2,7 +2,7 @@
   "name": "client",
   "homepage": ".",
   "version": "0.1.0",
-  "proxy": "http://localhost:5000",
+  "proxy": "portfolio-website-react-server-production.up.railway.app",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
