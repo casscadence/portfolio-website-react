@@ -2,11 +2,13 @@ const express = require('express');
 const { createPool } = require('mysql');
 const app = express();
 
-const urlDB = `mysql://root:E-3A5333c6GghGAFhhh3g3d2c434Ab6C@viaduct.proxy.rlwy.net:35738/railway`;
-
 (async () => {
     const pool = createPool({
-      urlDB
+      host: process.env.DB_HOST,
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_DATABASE,
+      connectionLimit: 10
     })
   
     const projectData = await new Promise((resolve) => {
@@ -34,8 +36,8 @@ const urlDB = `mysql://root:E-3A5333c6GghGAFhhh3g3d2c434Ab6C@viaduct.proxy.rlwy.
     
 })()
 
-app.listen(5000, () => {console.log('Server started on port 5000')});
+app.listen(process.env.DB_PORT, () => {console.log('Server started on port railway')});
 
-if (process.env.NODE_ENV === "production") {
+/* if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
-}
+} */
