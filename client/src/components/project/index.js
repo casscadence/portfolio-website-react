@@ -81,7 +81,7 @@ const Project = ({scrollPercent, setScrollPercent}) => {
           </div>
         </div>
       </div>
-      <div className={scrollPercent == 100 ? 'arrow visible' : 'arrow invisible'}><img src={require(`../../assets/icons/downArrow.png`)} alt='' /></div>
+      <div className={scrollPercent == 100 ? 'arrow visible' : 'arrow invisible'}><img src={require(`../../assets/icons/downarrow.png`)} alt='' /></div>
     </>
   )
 }

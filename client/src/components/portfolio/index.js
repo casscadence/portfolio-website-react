@@ -59,7 +59,7 @@ const Portfolio = ({scrollPercent, setScrollPercent}) => {
           Website © Arielle Bartee - All Rights Reserved
         </footer>
       </div>
-      <div className={scrollPercent == 0 && windowWidth < 1100 ? 'arrow arrow-height invisible' : 'arrow arrow-height in-visible'}><img src={require(`../../assets/icons/downArrow.png`)} alt='' /></div>
+      <div className={scrollPercent == 0 && windowWidth < 1100 ? 'arrow arrow-height invisible' : 'arrow arrow-height in-visible'}><img src={require(`../../assets/icons/downarrow.png`)} alt='' /></div>
     </>
   )
 }
