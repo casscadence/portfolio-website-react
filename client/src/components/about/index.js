@@ -37,12 +37,12 @@ const About = ({scrollPercent, setScrollPercent}) => {
   }
 
   const fetchResume = () => {
-    fetch('../../assets/images/Resume/BarteeArielle_Resume.pdf').then(response => {
+    fetch('../../assets/images/Resume/barteearielle_resume.pdf').then(response => {
       response.blob().then(blob => {
           const fileURL = window.URL.createObjectURL(blob);
           let alink = document.createElement('a');
           alink.href = fileURL;
-          alink.download = 'BarteeArielle_Resume.pdf';
+          alink.download = 'barteearielle_resume.pdf';
           alink.click();
       })
   })

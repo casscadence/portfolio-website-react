@@ -7,9 +7,9 @@ import { Link, NavLink } from 'react-router-dom'
 const Topbar = ({scrollPercent}) => {
 
   const [activeClass, setActiveClass] = useState('');
-  const [IMGurl, setIMGUrl] = useState('gallery/3D1.png');
+  const [IMGurl, setIMGUrl] = useState('gallery/3d1.png');
   const [IMGanim, setIMGAnim] = useState('');
-  const prevIMGurl = useRef('gallery/3D1.png');
+  const prevIMGurl = useRef('gallery/3d1.png');
   const [logo, setLogo] = useState(Logo);
 
   useEffect(() => {
