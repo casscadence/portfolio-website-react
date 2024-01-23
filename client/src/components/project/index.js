@@ -6,7 +6,7 @@ import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons'
 import ProjectLoad from '../projectload'
 import './index.scss'
 
-const useFetch = (url) => {
+/* const useFetch = (url) => {
   const [data, setData] = useState(['']);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const useFetch = (url) => {
   },[url]);
   
   return data;
-}; 
+};  */
 
 const Project = ({scrollPercent, setScrollPercent}) => {
   const { selectionId } = useParams();
@@ -43,7 +43,7 @@ const Project = ({scrollPercent, setScrollPercent}) => {
     })
   })
 
-  const data = useFetch(`/portfolio/${selectionId}/${projectId}`);
+  //const data = useFetch(`/portfolio/${selectionId}/${projectId}`);
 
   useEffect(() => {
     document.title = 'Portfolio | Arielle Bartee';
@@ -77,7 +77,8 @@ const Project = ({scrollPercent, setScrollPercent}) => {
         <p className='project-number'>0{data.number + 1}/0{data.length}</p>
         <div ref={scrollWindow} className='text-container' onScroll={onScroll}>
           <div className='text-zone'>
-            <ProjectLoad descRef={descRef} detRef={detRef} descVisible={descVisible} detVisible={detVisible} projectData={data} projectId={projectId} imgIdx={imgIdx} subIndex={subIndex} addIndex={addIndex} direction={direction} />
+            {/* <ProjectLoad descRef={descRef} detRef={detRef} descVisible={descVisible} detVisible={detVisible} projectData={data} projectId={projectId} imgIdx={imgIdx} subIndex={subIndex} addIndex={addIndex} direction={direction} /> */}
+            <ProjectLoad descRef={descRef} detRef={detRef} descVisible={descVisible} detVisible={detVisible} projectId={projectId} imgIdx={imgIdx} subIndex={subIndex} addIndex={addIndex} direction={direction} />
           </div>
         </div>
       </div>
