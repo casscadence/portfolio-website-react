@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
-import AboutPhoto from '../../assets/images/about-photo.png'
 import CV from '../../assets/images/resume/barteearielle_resume.pdf';
+import VerticalCarousel from '../verticalcarousel';
 
 const About = ({scrollPercent, setScrollPercent}) => {
   const [loaderName, setLoaderName] = useState('loader');
@@ -10,6 +10,8 @@ const About = ({scrollPercent, setScrollPercent}) => {
   const topRef = useRef();
   const footerRef = useRef();
   const { ref: inViewRef, inView } = useInView();
+  const [direction, setDirection] = useState('middle');
+  const [about, setAbout] = useState();
  
   useEffect(() => {
     setTimeout(() => {
@@ -46,48 +48,40 @@ const About = ({scrollPercent, setScrollPercent}) => {
           alink.download = 'barteearielle_resume.pdf';
           alink.click();
       })
-  })
+    })
   }
 
+  useEffect(() => {
+    document.title = 'Portfolio | Arielle Bartee';
+  }, [])
+
+  useEffect(() => {
+    setDirection('about-switch')
+    setTimeout(() => {
+      setDirection('about')
+    }, 800)
+  }, [about])
+  
   return (
     <>
       <div ref={scrollWindow} className='container about-page' onScroll={onScroll}>
         <div ref={topRef} className="text-zone">
-        <div className='about-text'>
-          <ul>
-            <li className='about-list active'><h1 className='about-title'>About</h1></li>
-            <li className='about-list'><h1 className='about-title'>Skills</h1></li>
-            <li className='about-list'><h1 className='about-title'>Tools</h1></li>
-          </ul>
-        </div>
-          <div className='about-desc'>
-            <h2>
-              About
-            </h2>
-            <h1 className='letter-anim'>
-              Who I Am
-            </h1>
-            <p>
-              My name is Arielle Bartee. I'm a developer and artist from FL.
-            </p>
-            <p>
-              Websites are a canvas for expression, reflecting the heart of a business.
-              Each design tells a visual story, and learning how to share the author's voice inspires me to grow as a developer.
-            </p>
-            <p>
-              My interest in exploring the immersive storytelling of video games strengthens my experience in framing each design.
-              Video games encourage the audience to step into the author's world, and game design shapes the path they take.
-              Tracing those steps in web design to follow the user's journey through the pages outlines how to chart that path 
-              to introduce and build healthier client relationships.
-            </p>
-            <p>
-              Through both web design and game design, I aspire to create works that bring imaginative worlds to life and draw creative minds together.
-            </p>
-            <div className='button-border' onClick={fetchResume}>
-              <div className='button-fill'>
-                <p className='button-border-link' >Download CV</p>
+          <div className="about-wrapper">
+            <div className='about-text'>
+              <ul>
+                <li className={`about-list ${about === 'about' || about == null ? 'active' : ''}`} onClick={direction === 'about' ? (() => {setAbout('about')}) : () => {}}><h1 className='about-title'>About</h1></li>
+                <li className={`about-list ${about === 'skills' ? 'active' : ''}`} onClick={direction === 'about' ? (() => {setAbout('skills')}) : () => {}} ><h1 className='about-title'>Skills</h1></li>
+                <li className={`about-list ${about === 'tools' ? 'active' : ''}`} onClick={direction === 'about' ? (() => {setAbout('tools')}) : () => {}} ><h1 className='about-title'>Tools</h1></li>
+              </ul>
+              <div className='button-wrapper'>
+              <div className='button-border' onClick={fetchResume}>
+                <div className='button-fill'>
+                  <p className='button-border-link' >Download CV</p>
+                </div>
               </div>
             </div>
+            </div>
+            <VerticalCarousel about={about} direction={direction}></VerticalCarousel>
           </div>
         </div>
         <footer ref={footerRef} id='footer' className='footer'>

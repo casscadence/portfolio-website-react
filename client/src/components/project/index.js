@@ -6,20 +6,6 @@ import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons'
 import ProjectLoad from '../projectload'
 import './index.scss'
 
-/* const useFetch = (url) => {
-  const [data, setData] = useState(['']);
-
-  useEffect(() => {
-    fetch(url)
-    .then(res => res.json())
-    .then(json => {
-      setData({ id: json.id, title: [json.title.includes('e2i') ? json.title.replace(/-/g, ' ').replace('e2i', 'e2i : ') : json.title.replace(/-/g, ' ') ], date: json.date, desc: json.desc, type: json.type, tools: json.tools, contribution: json.contribution, number: json.number, length: json.length})
-    })
-  },[url]);
-  
-  return data;
-};  */
-
 const Project = ({scrollPercent, setScrollPercent}) => {
   const { selectionId } = useParams();
   const { projectId } = useParams();
@@ -59,8 +45,6 @@ const Project = ({scrollPercent, setScrollPercent}) => {
     })
   })
 
-  //const data = useFetch(`/portfolio/${selectionId}/${projectId}`);
-
   useEffect(() => {
     document.title = 'Portfolio | Arielle Bartee';
     setTextAnim('animate-text')
@@ -90,7 +74,7 @@ const Project = ({scrollPercent, setScrollPercent}) => {
     <>
       <div className='container project-page'>
         <div className='fa-back-arrow'><FontAwesomeIcon icon={faArrowLeftLong} onClick={()=>navigate(-1)} /></div>
-        <p className='project-number'>0{parseInt(data[0].id) + 1}/0{projectDataObjects.length}</p>
+        <p className='project-number'>0{parseInt(data[0].id)}/0{projectDataObjects.length}</p>
         <div ref={scrollWindow} className='text-container' onScroll={onScroll}>
           <div className='text-zone'>
             <ProjectLoad descRef={descRef} detRef={detRef} descVisible={descVisible} detVisible={detVisible} projectData={data[0]} projectId={projectId} imgIdx={imgIdx} subIndex={subIndex} addIndex={addIndex} direction={direction} />
