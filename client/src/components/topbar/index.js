@@ -18,7 +18,7 @@ const Topbar = ({scrollPercent}) => {
       prevIMGurl.current = IMGurl;
       setIMGAnim('')
     }, 500)
-    console.log(prevIMGurl.current)
+    //console.log(prevIMGurl.current)
   }, [IMGurl])  
 
   useEffect(() => {
@@ -35,10 +35,10 @@ const Topbar = ({scrollPercent}) => {
   const logoSwitch = () => {
     if (window.innerWidth <= 1000) {
       setLogo(Logo)
-      console.log(window.innerWidth)
+      //console.log(window.innerWidth)
     } else {
       setLogo(LogoAB)
-      console.log(window.innerWidth)
+      //console.log(window.innerWidth)
     }
   }
 

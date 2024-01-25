@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import CV from '../../assets/images/resume/barteearielle_resume.pdf';
-import VerticalCarousel from '../verticalcarousel';
+import AboutSlides from '../aboutslides';
 
 const About = ({scrollPercent, setScrollPercent}) => {
   const [loaderName, setLoaderName] = useState('loader');
@@ -67,21 +67,19 @@ const About = ({scrollPercent, setScrollPercent}) => {
       <div ref={scrollWindow} className='container about-page' onScroll={onScroll}>
         <div ref={topRef} className="text-zone">
           <div className="about-wrapper">
-            <div className='about-text'>
-              <ul>
-                <li className={`about-list ${about === 'about' || about == null ? 'active' : ''}`} onClick={direction === 'about' ? (() => {setAbout('about')}) : () => {}}><h1 className='about-title'>About</h1></li>
-                <li className={`about-list ${about === 'skills' ? 'active' : ''}`} onClick={direction === 'about' ? (() => {setAbout('skills')}) : () => {}} ><h1 className='about-title'>Skills</h1></li>
-                <li className={`about-list ${about === 'tools' ? 'active' : ''}`} onClick={direction === 'about' ? (() => {setAbout('tools')}) : () => {}} ><h1 className='about-title'>Tools</h1></li>
-              </ul>
-              <div className='button-wrapper'>
+            <div className='button-wrapper'>
               <div className='button-border' onClick={fetchResume}>
                 <div className='button-fill'>
-                  <p className='button-border-link' >Download CV</p>
+                  <p className='button-border-link'>Download CV</p>
                 </div>
               </div>
             </div>
-            </div>
-            <VerticalCarousel about={about} direction={direction}></VerticalCarousel>
+            <ul>
+              <li className={`about-list ${about === 'about' || about == null ? 'active' : ''}`} onClick={direction === 'about' ? (() => {setAbout('about')}) : () => {}}><h1 className='about-title'>About</h1></li>
+              <li className={`about-list ${about === 'skills' ? 'active' : ''}`} onClick={direction === 'about' ? (() => {setAbout('skills')}) : () => {}} ><h1 className='about-title'>Skills</h1></li>
+              <li className={`about-list ${about === 'tools' ? 'active' : ''}`} onClick={direction === 'about' ? (() => {setAbout('tools')}) : () => {}} ><h1 className='about-title'>Tools</h1></li>
+            </ul>
+            <AboutSlides about={about} direction={direction}></AboutSlides>
           </div>
         </div>
         <footer ref={footerRef} id='footer' className='footer'>

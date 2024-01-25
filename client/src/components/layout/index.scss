@@ -128,6 +128,7 @@ img {
       font-weight: 300;
       color: #272727;
       letter-spacing: 2px;
+      transition: font-size .4s;
 
       &:before {
         font-family: 'La Belle Aurore', cursive;
@@ -235,21 +236,22 @@ img {
     }
 
     .text-zone {
-      padding: 100px;
+      padding: 100px 10%;
 
       .about-wrapper {
+        min-height: 600px;
+        justify-content: center;
         display: flex;
-        flex-wrap: no-wrap;
-        padding: 0 150px;
+        flex-flow: nowrap;
 
-        .dev-desc {
-          margin-top: 40px;
+        ul {
+          padding: 50px 10%;
         }
     
         .about-button {
-          pointer-events: all;
           cursor: pointer;
-          padding: 10px 10px;
+          pointer-events: all;
+          padding: 5px 10px;
           margin: 4px;
           border: solid 2px;
           border-color: #272727;
@@ -271,110 +273,33 @@ img {
           }
         }
 
-        .about-text, .about-photo {
-          display: inline;
-        }
-  
-        .about-text {
-          padding: 30px 100px;
-        }
-  
-        .about-photo {  
-          padding: 20px;
-          width: 100%;
-          height: 800px;
-          overflow-y: clip;
-  
-          img {
-            width: 600px;
-            animation: slideInUp 2s ease;
-            animation-fill-mode: forwards;
+        .about-desc {
+          padding: 50px;
+          animation: fadeIn;
+          animation-duration: .4s;
+          animation-fill-mode: forwards;
+
+          .dev-desc{
+            display: flex;
+            flex-flow: wrap;
+            width: 100%;
           }
         }
-      }
-    }
 
-    @media (max-width: 1200px) {  
-      h1 {
-        font-size: 60px;
-      }
-
-      h2 {
-        font-size: 16px;
-
-        &:after {
-          bottom: -17px;
-        }
-      }
-
-      p {
-        font-size: 15px;
-      }
-
-      .text-zone {
-        padding: 60px;
-
-        .about-photo {   
-          img {
-            width: 500px;
-          }
-        }
-      }
-    }
-
-    @media (max-width: 1000px) {  
-      h1 {
-        font-size: 60px;
-      }
-
-      h2 {
-        font-size: 16px;
-
-        &:after {
-          bottom: -17px;
-        }
-      }
-
-      p {
-        font-size: 15px;
-      }
-
-      .text-zone {
-        width: 80%;
-        margin: 0 auto;
-        padding: 50px 0;
-        position: relative;
-        top: 0;
-        left: 0;
-        display: flex;
-        flex-direction: column-reverse;
-        
-        .about-text, .about-photo {
-          width: 100%;
-          position: relative;
-          padding: 0;
-          margin: 50px auto;
- 
-        }
-
-        .about-photo {   
-          width: 100%;
-          margin: auto;
+        .button-wrapper {
+          width: fit-content;
+          grid-column: 1 / span 2;
           display: flex;
+          flex-flow: row;
           justify-content: center;
+          margin: 0 20px;
 
-          img {
-            height: 100%;
+          .button-border {
+            position: absolute;
+            left: 6.8vw;
+            top: 300px;
           }
         }
-      }
-
-      p {  
-          @for $i from 1 through 4 {
-            &:nth-of-type(#{$i}) {
-              width: 100%;
-            }
-          }
       }
     }
 
@@ -382,116 +307,115 @@ img {
       &:hover {
         color: #181818;
       }
-    }
+    }  
 
-    /* Vertical Carousel Start */
+    /* Mobile Start */
 
-    .rotating-gallery-container {
-      max-width: initial;
-      width: 100%;
-      height: 650px;
-      overflow-y: clip;
-      margin: 0;
-    }
-    
-    .rotating-gallery {
-        position: relative;
-        margin: 0;
-    }
-    
-    .rotating-images {
-        cursor: pointer;
-        left: 100px;
-        position: relative;
-        display: flex;
-        transition: border .3s;    
-        margin-top: 40px; 
-        
-        .rotating-image {
-          width: 80%;
+    @media (max-width: 1000px) {  
+      .text-zone {
+        .about-wrapper {
+          display: grid;
+          justify-content: center;
+          padding: 0;
 
-          .about-desc {  
-            //padding: 30px 50px;
-            //width: 60%;
+          ul {
+            display: flex;
+            flex-flow: row;
             padding: 0;
-          }
-        }
+            order: 1;
+            grid-column: 1 / span 2;
 
-        .rotating-image, .rotating-image:hover {
-          border: none;
-          pointer-events: none;
+            li {
+              width: 100%;
 
-          &::before {
-            border: none;
+              h1 {
+                margin: 0;
+              }
+            }
+
+            .about-list {
+              text-align: center;
+              margin: auto 4vw auto 4vw;
+
+              .about-title {
+                font-size: 30px;
+              }
+            }
+            .active {
+              .about-title {
+                font-size: 50px;
+              }
+
+              &::marker {
+                white-space: nowrap;
+              }
+            }
+
           }
-          &::after {
-            border: none;
-          }
-        }
-    }
-    
-    .rotating-image.middle[data-arrival-index="1"] {
-        transform: translateY(0%) scale(120%);
-        z-index: 2;
-        opacity: 1;
-        transition: opacity 0s;
-    }
-    .rotating-image.middle[data-arrival-index="2"] {
-        transform: translateY(105%);
-        z-index: 1;
-        opacity: 0;
-        transition: opacity 0s;
-    }
-    .rotating-image.middle[data-arrival-index="3"] {
-        transform: translateY(210%);
-        z-index: 0;
-        opacity: 0;
-        transition: opacity 0s;
-    }
+          .about-desc {
+            order: 2;
+            padding: 50px 0 0 0;
+            width: 100%;
+            grid-column: 1 / span 2;
+            min-height: 500px;
   
-    .rotating-image.down[data-arrival-index="1"] {
-        transform: translateY(-105%);
-        opacity: 0;
-        transition: opacity .5s, transform 1s;
-    }
-    .rotating-image.down[data-arrival-index="2"] {
-        transform: translateY(0%);
-        opacity: 0;
-        transition: opacity .5s, transform .8s;
-    }
-    .rotating-image.down[data-arrival-index="3"] {
-        animation: loadingtop .8s;
-        opacity: 1;
-        transition: opacity 1s, animation .8s;
-    }
-
-        @keyframes loadingtop {
-          0% {
-            transform: translateY(105%);
+            .dev-desc{
+              width: 100%;
+            }
           }
-          100% {
-            transform: translateY(0%);
+
+          .button-wrapper {
+            order: 3;
+            width: 100%;
+            grid-column: 1 / span 2;
+            position: relative;
+
+            .button-border {
+              left: -20px;
+              top: 0;
+            }
           }
         }
-      
-    .rotating-image.up[data-arrival-index="1"] {
-        transform: translateY(-105%);
-        opacity: 0;
-        transition: opacity .5s, transform .8s;
-    }
-    .rotating-image.up[data-arrival-index="2"] {
-        transform: translateY(0%);
-        opacity: 0;
-        transition: opacity .5s, transform .8s;
-    }
-    .rotating-image.up[data-arrival-index="3"] {
-        transform: translateY(105%);
-        opacity: 0;
-        transition: opacity .5s, transform .8s;
+      }
     }
 
-    /* Vertical Carousel End */
+    @media (max-width: 700px) {  
+      h1 {
+        font-size: 60px;
+        transition: font-size .4s;
+      }
 
+      h2 {
+        font-size: 16px;
+      }
+
+      .text-zone {
+        padding: 50px;
+
+        .about-wrapper {
+          ul {
+            padding-top: 30px;
+            .about-list {
+              .about-title {
+                font-size: 25px;
+              }
+            }
+            .active {
+              font-size: 40px;
+
+              .about-title {
+                font-size: 40px;
+                margin-left: 5px;
+              }
+            }
+          }
+          .about-button {
+            padding: 2px 7px;
+          }
+        }
+      }
+    }
+  /* Mobile End */
 }
 
 .container.contact-page {
@@ -569,7 +493,7 @@ img {
   .text-zone {
     display: flex;
     flex-wrap: no-wrap;
-    padding: 100px 150px;
+    padding: 100px 10%;
     margin: 0;
 
     .contact-text {
@@ -733,12 +657,6 @@ img {
     }
   }
 
-  @media (max-width: 1200px) {  
-    .text-zone {
-      padding: 60px;
-    }
-  }
-
   @media (max-width: 1000px) {  
     .text-zone {
       width: 80%;
@@ -787,10 +705,6 @@ img {
       &:after {
         bottom: -17px;
       }
-    }
-
-    p {
-      font-size: 15px;
     }
   }
 

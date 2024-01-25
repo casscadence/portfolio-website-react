@@ -53,20 +53,20 @@ const Project = ({scrollPercent, setScrollPercent}) => {
   const subIndex = () => {
     setDirection('right')
     setTimeout(() => {
-        return setImgIdx(prevIdx => prevIdx.map(idx => idx>0 ? idx-1 : prevIdx.length-1))
+        setImgIdx(prevIdx => prevIdx.map(idx => idx>0 ? idx-1 : prevIdx.length-1))
     }, 1200)
     setTimeout(() => {
-      return setDirection('middle')
+      setDirection('middle')
     }, 1200)
   }
 
   const addIndex = () => {
     setDirection('left')
     setTimeout(() => {
-      return setImgIdx(prevIdx => prevIdx.map(idx => idx<prevIdx.length-1 ? idx+1 : 0))
+      setImgIdx(prevIdx => prevIdx.map(idx => idx<prevIdx.length-1 ? idx+1 : 0))
     }, 1200)
     setTimeout(() => {
-      return setDirection('middle')
+      setDirection('middle')
     }, 1200)
   }
 
