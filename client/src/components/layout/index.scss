@@ -746,7 +746,7 @@ img {
       }
     }
 
-    p {  
+    p {      
         @for $i from 1 through 4 {
           &:nth-of-type(#{$i}) {
             width: 100%;

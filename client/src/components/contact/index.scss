@@ -124,7 +124,8 @@
 
         input, textarea {
           cursor: pointer;
-          background-color: #181818; 
+          //background-color: #181818; 
+          background-color: #0b0b0b;
 
           &:placeholder-shown + .border-bold {
             transform: scaleX(0);
@@ -155,14 +156,13 @@
       border-style: none;
       height: 65px;
       line-height: 1.25;
-      //font-size: 13px;
       font-size: 25px;
       letter-spacing: 2px;
       color: lightgray;
       margin: 20px 0 0 -12px;
-      box-sizing: border-box;
-      //background-color: white; 
-      background-color: #181818; 
+      box-sizing: border-box; 
+      //background-color: #181818;
+      background-color: #0b0b0b;
       text-indent: .5em;
 
       &:-webkit-autofill {
@@ -198,7 +198,6 @@
     textarea:placeholder-shown ~ .textarea-title {
       font-family: sans-serif;
       font-weight: 400;
-      //font-size: 13px;
       font-size: 25px;
       transform: translateY(0);
       color: rgba(68,68,68,.5);
@@ -212,7 +211,6 @@
 
     input:focus:placeholder-shown ~ .input-title,
     textarea:focus:placeholder-shown ~ .textarea-title {
-      //font-size: 13px;
       font-size: 20px;
       color: white;
       transition: font-size .3s, transform .3s, color .3s;
@@ -227,7 +225,6 @@
     textarea ~ .textarea-title {
       letter-spacing: 2px;
       font-family: sans-serif;
-      //font-size: 13px;
       font-size: 20px;
       color: white;
       opacity: 1;
@@ -327,13 +324,11 @@
       border-style: none;
       height: 100px !important;
       min-height: 50px;
-      margin: 37px 0 0 0;
+      margin: 37px 0 0 -8px;
       padding-left: 10px;
       line-height: 30px;
-      //font-size: 15px;
       font-size: 25px;
       letter-spacing: 2px;
-      //color: black;
       color: lightgray;
       letter-spacing: 2px;
       box-sizing: border-box;
@@ -365,6 +360,17 @@
     @media (max-width: 1000px) {
       textarea {
         height: 150px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      textarea, input[type='text'], input[type='email'] {
+        font-size: 20px;
+      }
+
+      input:placeholder-shown ~ .input-title,
+      textarea:placeholder-shown ~ .textarea-title {
+        font-size: 20px;
       }
     }
 
