@@ -469,18 +469,26 @@
     }
 
     .project-desc, .project-details {
-        width: 100%;
+        width: 85%;
+        margin: 0 auto 80px auto;
+
+        &.animate-desc {
+            &::after {
+                width: 100%;
+                left: 0;
+            }
+        }
 
         .desc-title, .details-title {
-            width: 75%;
+            width: 90%;
         }
 
         .desc-text {
-            width: 75%;
+            width: 90%;
         }
 
         ul {
-            width: 65%;
+            width: 85%;
         }
 
         p {
@@ -495,6 +503,7 @@
             }
         }
     }
+    
 }
 
 .back-arrow {
@@ -586,6 +595,7 @@
 } 
 
 .arrow {
+    pointer-events: none;
     position: absolute;
     bottom: 0;
     width: 100%;
