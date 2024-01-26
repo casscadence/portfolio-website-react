@@ -52,10 +52,6 @@ const About = ({scrollPercent, setScrollPercent}) => {
   }
 
   useEffect(() => {
-    document.title = 'Portfolio | Arielle Bartee';
-  }, [])
-
-  useEffect(() => {
     setDirection('about-switch')
     setTimeout(() => {
       setDirection('about')

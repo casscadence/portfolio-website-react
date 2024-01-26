@@ -1,3 +1,7 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngular, faCss3, faHtml5, faJava, faJs, faNodeJs, faPhp, faReact, faSass } from '@fortawesome/free-brands-svg-icons';
+import { faCopyright, faDatabase, faLeaf, faServer, faT } from '@fortawesome/free-solid-svg-icons';
+
 const AboutSlides = ({ about, subIndex, addIndex, direction }) => {
    return (
         <>
@@ -25,20 +29,20 @@ const AboutSlides = ({ about, subIndex, addIndex, direction }) => {
             <h2>Skills</h2>
             <h1 className='letter-anim'>Languages</h1>
             <p className="dev-desc">
-                <span className="about-button">HTML</span>
-                <span className="about-button">CSS</span>
-                <span className="about-button">JavaScript</span>
-                <span className="about-button">ReactJS</span>
-                <span className="about-button">AngularJS</span>
-                <span className="about-button">TypeScript</span>
-                <span className="about-button">SQL</span>
-                <span className="about-button">NodeJS</span>
-                <span className="about-button">Express</span>
-                <span className="about-button">C#</span>
-                <span className="about-button">.NET</span>
-                <span className="about-button">PHP</span>
-                <span className="about-button">Java</span>
-                <span className="about-button">Spring</span>
+                <span className="about-button skills"><FontAwesomeIcon icon={faHtml5} /></span>
+                <span className="about-button skills"><FontAwesomeIcon icon={faCss3} /></span>
+                <span className="about-button skills"><FontAwesomeIcon icon={faSass} /></span>
+                <span className="about-button skills"><FontAwesomeIcon icon={faT} /></span>
+                <span className="about-button skills"><FontAwesomeIcon icon={faJs} /></span>
+                <span className="about-button skills"><FontAwesomeIcon icon={faReact} /></span>
+                <span className="about-button skills"><FontAwesomeIcon icon={faAngular} /></span>
+                <span className="about-button skills"><FontAwesomeIcon icon={faNodeJs} /></span>
+                <span className="about-button skills"><FontAwesomeIcon icon={faServer} /></span>
+                <span className="about-button skills"><FontAwesomeIcon icon={faCopyright} /></span>
+                <span className="about-button skills"><FontAwesomeIcon icon={faPhp} /></span>
+                <span className="about-button skills"><FontAwesomeIcon icon={faJava} /></span>
+                <span className="about-button skills"><FontAwesomeIcon icon={faLeaf} /></span>
+                <span className="about-button skills"><FontAwesomeIcon icon={faDatabase} /></span>
             </p>
         </div>
         : about === 'tools' ?

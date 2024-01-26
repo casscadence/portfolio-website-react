@@ -57,10 +57,11 @@
       display: block;
       margin: 20px auto;
       padding: 0 15px;
+      z-index: 5;
 
       &:hover, &:active, &:focus {
         img {
-          animation: rubberBand 1s infinite;
+          animation: rubberBand 1s;
         }
       }
       

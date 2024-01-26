@@ -4,12 +4,14 @@ const ProjectLoad = ({ descRef, detRef, descVisible, detVisible, textAnim, proje
 
     return (
         <>
-            <h1 className='project-title'>
-                {projectData.title}
-            </h1>
-            <p className='project-sub-title'>
-                {projectData.date}
-            </p>
+            <div className='project-container'>
+                <h1 className='project-title'>
+                    {projectData.title}
+                </h1>
+                <p className='project-sub-title'>
+                    {projectData.date}
+                </p>
+            </div>
             <div className='rotating-gallery-container'>
                 <div className='rotating-gallery'>
                     <div className='rotating-images'>
@@ -43,10 +45,10 @@ const ProjectLoad = ({ descRef, detRef, descVisible, detVisible, textAnim, proje
                                 </li>}
                         </ul>
                     </div>
+                    <footer id='footer' className='footer'>
+                        AB Portfolio - 2023 © Arielle Bartee
+                    </footer>
                 </div>
-                <footer id='footer' className='footer'>
-                    AB Portfolio - 2023 © Arielle Bartee
-                </footer>
             </div>
         </>
     )

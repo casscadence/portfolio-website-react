@@ -77,7 +77,9 @@ const Project = ({scrollPercent, setScrollPercent}) => {
         <p className='project-number'>0{parseInt(data[0].id)}/0{projectDataObjects.length}</p>
         <div ref={scrollWindow} className='text-container' onScroll={onScroll}>
           <div className='text-zone'>
-            <ProjectLoad descRef={descRef} detRef={detRef} descVisible={descVisible} detVisible={detVisible} projectData={data[0]} projectId={projectId} imgIdx={imgIdx} subIndex={subIndex} addIndex={addIndex} direction={direction} />
+            <div className='project-wrapper'>
+              <ProjectLoad descRef={descRef} detRef={detRef} descVisible={descVisible} detVisible={detVisible} projectData={data[0]} projectId={projectId} imgIdx={imgIdx} subIndex={subIndex} addIndex={addIndex} direction={direction} />
+            </div>
           </div>
         </div>
       </div>
