@@ -42,7 +42,7 @@ const Home = () => {
     <>
       <div className="container home-page">
         <div className="text-zone">
-          <h1>
+{/*         <h1>
             <span className={letterClass}>H</span>
             <span className={`${letterClass} _12`}>i,</span>
             <br />
@@ -64,7 +64,7 @@ const Home = () => {
               idx={22}
             />
           </h1>
-          <h2>Front End Developer / Back End Developer / Artist</h2>
+          <h2>Front End Developer / Back End Developer / Artist</h2>*/}
         </div>
       </div>
     </>
