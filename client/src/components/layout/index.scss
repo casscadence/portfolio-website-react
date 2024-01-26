@@ -756,7 +756,7 @@ img {
     }
   }
 
-  @media (max-width: 800px) {  
+  @media (max-width: 700px) {  
     h1 {
       font-size: 60px;
     }
@@ -766,6 +766,12 @@ img {
 
       &:after {
         bottom: -17px;
+      }
+    }
+
+    .contact-social {
+      p {
+        width: 80%;
       }
     }
   }
@@ -876,6 +882,23 @@ img {
 @media (max-width: 700px) {  
   .container.portfolio-page {
     margin-top: 0;
+
+    .text-zone {
+      display: grid;
+      grid-template-columns: auto;
+
+      .project-link {
+
+        .gallery-photo {
+          width: 80vw;
+          overflow: clip; 
+
+          img {
+            width: 500px;
+          }
+        }
+      }
+    }
   }
 }
 
