@@ -37,6 +37,7 @@
         overflow: hidden;
         background-color: transparent;
     }
+
     @media (max-width: 1000px) {
         .text-zone {
             padding-top: 105px;
@@ -562,6 +563,7 @@
     .fa-back-arrow {
         top: 80px;
         left: 0;
+        margin: 40px 25px 40px 25px;
     }
 } 
 
@@ -569,7 +571,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    margin: 55px;
+    margin: 45px;
     color: #979797;
     font-size: 13px;
     letter-spacing: 1px;
@@ -579,7 +581,7 @@
 @media (max-width: 1000px) {
     .project-number {
         top: 75px;
-        margin: 55px 35px;
+        margin: 55px 25px;
     }
 } 
 

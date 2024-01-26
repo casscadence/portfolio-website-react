@@ -455,7 +455,7 @@
       display: flex;
       z-index: 2;
       height: 100%;
-      margin: 0 20px;
+      margin: 0;
       
       img {
         margin-top: 6px;
@@ -551,7 +551,7 @@
     }
 
     .nav-ham {
-      margin: auto 40px auto auto;
+      margin: auto 30px auto auto;
 
       .bar {
         margin: 5px 0;
@@ -560,6 +560,7 @@
     .cross {
       position: absolute;
       top: 0;
+
       .cross-bar
       {
         position: absolute;
