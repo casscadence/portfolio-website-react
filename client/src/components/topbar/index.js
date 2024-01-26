@@ -7,90 +7,47 @@ import { Link, NavLink } from 'react-router-dom'
 const Topbar = ({scrollPercent}) => {
 
   const [activeClass, setActiveClass] = useState('');
-  const [IMGurl, setIMGUrl] = useState('gallery/3d1.png');
-  const [IMGanim, setIMGAnim] = useState('');
   const prevIMGurl = useRef('gallery/3d1.png');
-  const [logo, setLogo] = useState(Logo);
-
-  useEffect(() => {
-    setIMGAnim('next-img')
-    setTimeout (() => {
-      prevIMGurl.current = IMGurl;
-      setIMGAnim('')
-    }, 500)
-    //console.log(prevIMGurl.current)
-  }, [IMGurl])  
-
-  useEffect(() => {
-    window.addEventListener('resize', logoSwitch)
-    return(() => {
-        window.removeEventListener('resize', logoSwitch)
-    })
-  })
-
-  useEffect(() => {
-    logoSwitch()
-  }, [])
-
-  const logoSwitch = () => {
-    if (window.innerWidth <= 1000) {
-      setLogo(Logo)
-      //console.log(window.innerWidth)
-    } else {
-      setLogo(LogoAB)
-      //console.log(window.innerWidth)
-    }
-  }
+  const [count, setCount] = useState(0);
 
   return (
     <div className={`nav-bar _${scrollPercent} ${activeClass === 'active' ? 'active-scroll-border' : (scrollPercent > 0 ? 'scroll-border' : '')}`}>
-      <Link to="/">
-        <div className='logo'>
-          <img src={logo} alt="Logo" />
+        <div className={`logo`} onClick={() => setCount(count+1)}>
+          <img src={LogoAB} alt="Logo" />
         </div>
-      </Link>
 
       <div className={activeClass === 'active' ? 'menu-cover active' : 'menu-cover'}></div>
-      <nav className={activeClass === 'active' ? 'active-nav' : ''}>
+      <nav className={`${activeClass === 'active' ? 'active-nav' : ''} ${count % 2 != 0 ? 'open-navigation' : ''}`}>
         <ul className='move-up-hidden'>
           <li>
             <div>
-              <NavLink exact="true" activeclassname="active" to="/" onMouseOver={() => {setIMGUrl('about-photo.png')}} onClick={() => setActiveClass('')}>
+              <NavLink exact="true" activeclassname="active" className='home-link' to="/" onClick={() => setActiveClass('')}>
                 Home
               </NavLink>
             </div>
           </li>
           <li>
             <div>
-              <NavLink activeclassname="active" className="about-link" to="/about" onMouseOver={() => setIMGUrl('about-photo.png')} onClick={() => setActiveClass('')}>
+              <NavLink activeclassname="active" className='about-link' to="/about" onClick={() => setActiveClass('')}>
                 About
               </NavLink>
             </div>
           </li>
           <li>
             <div>
-              <NavLink activeclassname="active" className="portfolio-link" to="/portfolio" onMouseOver={() => setIMGUrl('gallery/3D1.png')} onClick={() => setActiveClass('')}>
+              <NavLink activeclassname="active" className='portfolio-link' to="/portfolio" onClick={() => setActiveClass('')}>
                 Portfolio
               </NavLink>
             </div>
           </li>
           <li>
             <div>
-              <NavLink
-                activeclassname="active"
-                className="contact-link"
-                to="/contact"
-                onMouseOver={() => setIMGUrl('gallery/3D1.png')}
-                onClick={() => setActiveClass('')}>
+              <NavLink activeclassname="active" className='contact-link' to="/contact" onClick={() => setActiveClass('')}>
                   Contact
               </NavLink>
             </div>
           </li>
         </ul>
-        <div className='nav-image'>
-          <div className={`img-cover ${IMGanim}`}></div>
-          <img className='prev-img' src={require(`../../assets/images/${prevIMGurl.current.toLowerCase()}`)} alt='' />
-        </div>
       </nav>
 
       <div className={`nav-ham ${activeClass}`} onClick={() => setActiveClass(activeClass === '' ? 'active' : '')}>

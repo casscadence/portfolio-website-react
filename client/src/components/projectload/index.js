@@ -44,10 +44,10 @@ const ProjectLoad = ({ descRef, detRef, descVisible, detVisible, textAnim, proje
                         </ul>
                     </div>
                 </div>
+                <footer id='footer' className='footer'>
+                    AB Portfolio - 2023 © Arielle Bartee
+                </footer>
             </div>
-            <footer id='footer' className='footer'>
-                AB Portfolio - 2023 © Arielle Bartee
-            </footer>
         </>
     )
 }
