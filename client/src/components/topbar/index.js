@@ -3,20 +3,48 @@ import './index.scss'
 import Logo from '../../assets/images/logo.png'
 import LogoAB from '../../assets/images/logo-ab.svg'
 import { Link, NavLink } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faContactBook, faHome, faPerson, faPhone, faPhotoFilm, faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faFacebook, faGoogle, faLinkedin, faTwitter, faUpwork } from '@fortawesome/free-brands-svg-icons'
 
 const Topbar = ({scrollPercent}) => {
 
-  const [activeClass, setActiveClass] = useState('');
+  //const [activeClass, setActiveClass] = useState(false);
   const prevIMGurl = useRef('gallery/3d1.png');
-  const [count, setCount] = useState(0);
+  const [navActive, setNavActive] = useState(false);
+
+/*   const currentPage = (activePage) => {
+    setActiveClass(!activeClass)
+  } */
 
   return (
-    <div className={`nav-bar _${scrollPercent} ${activeClass === 'active' ? 'active-scroll-border' : (scrollPercent > 0 ? 'scroll-border' : '')}`}>
-        <div className={`logo`} onClick={() => setCount(count+1)}>
+    <div className={`nav-bar _${scrollPercent} ${navActive != true ? 'active-scroll-border' : (scrollPercent > 0 ? 'scroll-border' : '')}`}>
+{/*         <div className={`logo`} onClick={() => setCount(count+1)}>
           <img src={LogoAB} alt="Logo" />
+        </div> */}
+
+        <div id="circularMenu" className={`circular-menu circular-menu-left ${navActive ? 'active' : ''}`}>
+          <a className="floating-btn" onClick={() => setNavActive(!navActive)}>
+            {/* <FontAwesomeIcon icon={faPlus} /> */}
+            <img src={LogoAB} alt="Logo" />
+          </a>
+          <menu className="items-wrapper">
+            <NavLink exact="true" activeclassname="active" className='menu-item' to="/">
+              <FontAwesomeIcon icon={faHome} />
+            </NavLink>
+            <NavLink exact="true" activeclassname="active" className='menu-item' to="/about" onClick={() => setNavActive(!navActive)}>
+              <FontAwesomeIcon icon={faPerson} />
+            </NavLink>
+            <NavLink exact="true" activeclassname="active" className='menu-item' to="/portfolio" onClick={() => setNavActive(!navActive)}>
+              <FontAwesomeIcon icon={faPhotoFilm} />
+            </NavLink>
+            <NavLink exact="true" activeclassname="active" className='menu-item' to="/contact" onClick={() => setNavActive(!navActive)}>
+              <FontAwesomeIcon icon={faContactBook} />
+            </NavLink>
+          </menu>
         </div>
 
-      <div className={activeClass === 'active' ? 'menu-cover active' : 'menu-cover'}></div>
+{/*       <div className={activeClass === 'active' ? 'menu-cover active' : 'menu-cover'}></div>
       <nav className={`${activeClass === 'active' ? 'active-nav' : ''} ${count % 2 != 0 ? 'open-navigation' : ''}`}>
         <ul className='move-up-hidden'>
           <li>
@@ -58,7 +86,7 @@ const Topbar = ({scrollPercent}) => {
           <span className="cross-bar"></span>
           <span className="cross-bar"></span>
         </span>
-      </div>
+      </div> */}
     </div>
   )
 }

@@ -55,13 +55,13 @@ const Portfolio = ({scrollPercent, setScrollPercent}) => {
                   { img: '2D7', name: 'Cornucoopia' }
                 ]}
             />      
-            <div class="wrap-container">
-              <div class="gallery-wrap">
-                <div class="item item-1"></div>
-                <div class="item item-2"></div>
-                <div class="item item-3"></div>
-                <div class="item item-4"></div>
-                <div class="item item-5"></div>
+            <div className="wrap-container">
+              <div className="gallery-wrap">
+                <div className="item item-1"></div>
+                <div className="item item-2"></div>
+                <div className="item item-3"></div>
+                <div className="item item-4"></div>
+                <div className="item item-5"></div>
               </div>
             </div> 
             <div id="mz-gallery-container">

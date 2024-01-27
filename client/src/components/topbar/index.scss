@@ -1,3 +1,132 @@
+body {
+  background-color: #EDEDED;
+}
+.circular-menu {
+  position: fixed;
+  bottom: 10px; 
+  left: 10px;
+}
+
+.circular-menu .floating-btn {
+  cursor: pointer;
+  display: block;
+  border-radius: 50%;
+  background-color: hsl(4, 98%, 60%);
+  //box-shadow: 0 2px 5px 0 hsla(0, 0%, 0%, .26);  
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+  line-height: 3.9;
+  outline: 0;
+
+  width: 100px;
+  height: 100px;
+
+  img {
+    width: 70px;
+    animation: bounceIn .5s;
+    margin-top: 5px;
+  }
+}
+
+.circular-menu.active .floating-btn {
+  //box-shadow: inset 0 0 3px hsla(0, 0%, 0%, .3);
+
+  img {
+    animation: rubberBand 1s;
+  }
+}
+
+.circular-menu .floating-btn:active {
+  //box-shadow: 0 4px 8px 0 hsla(0, 0%, 0%, .4);
+}
+
+.circular-menu .floating-btn svg {
+  font-size: 40px;
+  transition: transform .2s;  
+  position: absolute;
+  left: 32px;
+  bottom: 30px;
+}
+
+.circular-menu.active .floating-btn svg {
+  transform: rotate(-45deg);
+}
+
+.circular-menu:after {
+  display: block;
+  content: ' ';
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -2;
+  background-color: hsl(4, 98%, 60%);
+  transition: all .4s ease;
+
+  width: 100px;
+  height: 100px;
+}
+
+.circular-menu.active:after {
+  width: 100vw;
+  height: 100vw;
+  transform: scale3d(5.5, 5.5, 1);
+  transition-timing-function: cubic-bezier(.68, 1.55, .265, 1);
+}
+
+.circular-menu .items-wrapper {
+  padding: 0;
+  margin: 0;
+}
+
+.circular-menu .menu-item {
+  position: absolute;
+  top: .2em;
+  right: .2em;
+  z-index: -1;
+  display: block;
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+  font-size: 25px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 3;
+  background: hsla(0,0%,0%,.1);
+  transition: transform .4s ease, background .2s ease;
+
+  width: 3em;
+  height: 3em;
+}
+
+.circular-menu .menu-item:hover {
+  background-color: hsla(0,0%,0%,.3);
+}
+
+.circular-menu.active .menu-item {
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.circular-menu.circular-menu-left.active .floating-btn svg {
+  transform: rotate(90deg);
+}
+
+.circular-menu.circular-menu-left.active .menu-item:nth-child(1) {
+  transform: translate3d(0,-7.5em,0);
+}
+
+.circular-menu.circular-menu-left.active .menu-item:nth-child(2) {
+  transform: translate3d(3.7em,-6.3em,0);
+}
+
+.circular-menu.circular-menu-left.active .menu-item:nth-child(3) {
+  transform: translate3d(6.5em,-3.6em,0);
+}
+
+.circular-menu.circular-menu-left.active .menu-item:nth-child(4) {
+  transform: translate3d(7.5em,0,0);
+}
+
+
 .nav-bar {
     pointer-events: none;
     background-color: transparent;
@@ -17,7 +146,7 @@
       left: 0;
       height: 0;
       width: 2.5px;
-      background: red;
+      background: hsl(4, 98%, 60%);
       z-index: 5;
     }
 
@@ -55,7 +184,7 @@
       user-select: all;
       position: absolute;
       display: block;
-      margin: 20px auto;
+      margin: 10px auto;
       padding: 0 15px;
       z-index: 5;
 
@@ -95,32 +224,6 @@
       align-items: center;
       justify-content: center;
       z-index: 1;
-
-      &.open-navigation {
-        ul {
-          padding: 0 0 0 280px;
-          opacity: 1;
-          transition: padding .5s, opacity .1s;
-
-          li {
-            margin: 0;
-            transition: margin .5s;
-
-            &:nth-child(1) {
-              transition-delay: .6s;
-            }
-            &:nth-child(2) {
-              transition-delay: .4s;
-            }
-            &:nth-child(3) {
-              transition-delay: .2s;
-            }
-            &:nth-child(4) {
-              transition-delay: .4s;
-            }
-          }
-        }
-      }
 
       ul {
         display: flex;
@@ -177,7 +280,6 @@
             position: relative;
             color: lightgray;
             text-decoration: none;    
-            //text-transform: uppercase; 
   
             @for $i from 5 through 1 {
               &:nth-child(#{$i}) {
@@ -206,7 +308,7 @@
               height: 4px;
               width: 100%;
               direction: rtl;
-              background: red;
+              background: hsl(4, 98%, 60%);
               transform: scaleX(0);
               transform-origin: left;
               transition: transform .3s;
@@ -345,13 +447,12 @@
       }
     } 
     .active {
-      right: 0;
       transition: 0.2s ease;
 
       &:hover {
         .cross {
           .cross-bar {
-            background-color: #DE1F0D;
+            background-color: hsl(4, 98%, 60%);
           }
         }
       }
@@ -359,12 +460,6 @@
   }
   
 @media (max-width: 1000px) {
-
-  .open-navigation {
-    padding: 0;
-    margin: 0;
-  }
-
   .nav-bar {
     width: 100vw;
     height: 85px;
@@ -387,12 +482,6 @@
           div {
             transform: translateY(100px);
           }
-        }
-      }
-
-      &.open-navigation {
-        ul {
-          padding: 0;
         }
       }
     }
@@ -420,7 +509,7 @@
       top: 0;
       height: 2.5px;
       width: 0;
-      background: red;
+      background: hsl(4, 98%, 60%);
       z-index: 5;
     }
 

@@ -36,7 +36,7 @@
 
         .project-wrapper {
             //padding: 60px 40px 30px 80px;
-            padding: 20px;
+            padding: 20px 50px;
         }
     }
 
@@ -46,7 +46,7 @@
 }
 
 .project-container {
-    width: 50%;
+    width: 45%;
     position: relative;
     //margin-left: 20px;
 }
@@ -63,6 +63,9 @@
     //padding-top: 60px;
     text-align: left;
     width: fit-content;
+    text-shadow: -1px -1px 0 #272727, 1px -1px 0 #272727, -1px 1px 0 #272727, 1px 1px 0 #272727;
+    font-weight: normal;
+    letter-spacing: 2px;
 
     &::after {
         content: "";
@@ -71,16 +74,16 @@
         left: 0;
         height: 5px;
         width: 31px;
-        background: #DE1F0D;
+        background: hsl(4, 98%, 60%);
     }
 }
 
 .project-sub-title {
     text-transform: uppercase;
     font-size: 15px;
-    letter-spacing: 3px;
-    color: #444;
-    opacity: .5;
+    letter-spacing: 1px;
+    //color: #444;
+    //opacity: .5;
     //margin-top: 5px;
     //margin-bottom: 15px;
 
@@ -90,6 +93,9 @@
     border-bottom: 1px solid lightgray;
     margin: 15px auto 15px auto;
     text-align: left;
+    font-family: 'Roboto';
+    font-weight: 700;
+    color: #272727;
 }
 
 .text-container {
@@ -134,13 +140,13 @@
     transition: all 1s;
 
     //
-    margin: 0 auto 50px auto;
+    margin: 0 auto 40px auto;
     width: 100%;
 
     &::after {
         content: '';
         position: absolute;
-        top: 55px;
+        top: 50px;
         //left: 15%;
         background: #272727;
         height: 5px;
@@ -171,7 +177,7 @@
         transform: translateX(-200px);
         //text-transform: uppercase;
         font-size: 30px;
-        letter-spacing: 2px;
+        letter-spacing: 1px;
         font-weight: bold;
         color: transparent;
         margin: 0 0 0 5px;
@@ -183,6 +189,9 @@
         //
         //width: 60%;
         text-align: left;
+        font-weight: bold;
+        font-family: 'Roboto';
+        font-size: 25px;
 
         &::before {
             content: '';
@@ -198,14 +207,14 @@
 
     .desc-text {
         //width: 70%;
-        margin: auto;
+        //margin: auto;
         opacity: 0;
         transform: translateY(200px);
         transition: all .3s ease;
 
         //
         text-align: left;
-        //width: 60%;
+        width: 80%;
 
         &.animate-text {
             opacity: 1;
@@ -261,11 +270,13 @@
             color: #444;
             //font-size: 15px;
             min-width: 150px;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             text-transform: capitalize;
 
             //
-            font-size: 18px;
+            font-size: 17px;
+            font-family: 'Roboto';
+            font-weight: 900;
         }
 
         @for $i from 1 through 3 {
@@ -843,6 +854,7 @@
 
             //
             text-align: center;
+            margin: auto;
         }
 
         ul {

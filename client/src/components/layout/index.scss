@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&family=Roboto:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 body {
   ::selection {
     color: white;
-    background: #DE1F0D;
+    background: hsl(4, 98%, 60%);
   }
 }
 
@@ -176,7 +176,7 @@ img {
         left: 0;
         height: 3px;
         width: 31px;
-        background: #DE1F0D;
+        background: hsl(4, 98%, 60%);
       }
     }
 
@@ -209,7 +209,7 @@ img {
         display: list-item;
         list-style-type: square;
         //color: #272727;
-        color: #DE1F0D;
+        color: hsl(4, 98%, 60%);
         font-size: 50px;
         transition: font-size .4s;
   
@@ -267,7 +267,7 @@ img {
           cursor: pointer;
           pointer-events: all;
           padding: 5px 10px;
-          margin: 10px 7px;
+          margin: 10px 14px 10px 0;
           border: solid 2px;
           //border-color: #272727;
           //border-color: lightgray;
@@ -292,7 +292,7 @@ img {
             transition: background-color .2s;
           }
 
-          &.skills {
+          &.icons {
             background-color: rgba(255,255,255,.02);
             border-color: rgba(255,255,255,.01);
             //padding: 20px 25px;
@@ -321,48 +321,79 @@ img {
               left: 0;
               width: 100%;
             }
-
-            &:nth-of-type(1)::after {
-              content: "HTML 5";
+            
+            &.skills {
+              &:nth-of-type(1)::after {
+                content: "HTML 5";
+              }
+              &:nth-of-type(2)::after {
+                content: "CSS 3";
+              }
+              &:nth-of-type(3)::after {
+                content: "SASS";
+              }
+              &:nth-of-type(4)::after {
+                content: "Bootstrap";
+              }
+              &:nth-of-type(5)::after {
+                content: "TS";
+              }
+              &:nth-of-type(6)::after {
+                content: "JS";
+              }
+              &:nth-of-type(7)::after {
+                content: "React";
+              }
+              &:nth-of-type(8)::after {
+                content: "Angular";
+              }
+              &:nth-of-type(9)::after {
+                content: "Node";
+              }
+              &:nth-of-type(10)::after {
+                content: "Express";
+              }
+              &:nth-of-type(11)::after {
+                content: "C#";
+              }
+              &:nth-of-type(12)::after {
+                content: "PHP";
+              }
+              &:nth-of-type(13)::after {
+                content: "Java";
+              }
+              &:nth-of-type(14)::after {
+                content: "Spring";
+              }
+              &:nth-of-type(15)::after {
+                content: "MySQL";
+              }
             }
-            &:nth-of-type(2)::after {
-              content: "CSS 3";
-            }
-            &:nth-of-type(3)::after {
-              content: "SASS";
-            }
-            &:nth-of-type(4)::after {
-              content: "TS";
-            }
-            &:nth-of-type(5)::after {
-              content: "JS";
-            }
-            &:nth-of-type(6)::after {
-              content: "React";
-            }
-            &:nth-of-type(7)::after {
-              content: "Angular";
-            }
-            &:nth-of-type(8)::after {
-              content: "Node";
-            }
-            &:nth-of-type(9)::after {
-              content: "Express";
-            }
-            &:nth-of-type(10)::after {
-              content: "C#";
-            }
-            &:nth-of-type(11)::after {
-              content: "PHP";
-            }
-            &:nth-of-type(12)::after {
-              content: "Java";
-            }
-            &:nth-of-type(13)::after {
-              content: "Spring";
-            }
-            &:nth-of-type(14)::after {
-              content: "MySQL";
+            &.tools {
+              &:nth-of-type(1)::after {
+                content: "Visual Studio";
+              }
+              &:nth-of-type(2)::after {
+                content: "Eclipse";
+              }
+              &:nth-of-type(3)::after {
+                content: "Photoshop";
+              }
+              &:nth-of-type(4)::after {
+                content: "Illustrator";
+              }
+              &:nth-of-type(5)::after {
+                content: "Maya/Blender";
+              }
+              &:nth-of-type(6)::after {
+                content: "Unity";
+              }
+              &:nth-of-type(7)::after {
+                content: "Git";
+              }
+              &:nth-of-type(8)::after {
+                content: "SVN";
+              }
             }
           }
         }
@@ -372,6 +403,10 @@ img {
           animation: fadeIn;
           animation-duration: .4s;
           animation-fill-mode: forwards;
+
+          //
+          width: 60%;
+          text-align: left;
 
           .dev-desc{
             display: flex;
@@ -417,21 +452,31 @@ img {
           ul {
             display: flex;
             flex-flow: row;
-            padding: 0 10px 0 10px;
+            //padding: 0 10px 0 10px;
             order: 1;
             grid-column: 1 / span 2;
+            
+            //
+            width: 100%;
+            padding: 0;
 
             li {
               width: 100%;
 
               h1 {
                 margin: 0;
+
+                //
+                width: 100%;
               }
             }
 
             .about-list {
               text-align: center;
-              margin: auto 2vw auto 7vw;
+              //margin: auto 2vw auto 7vw;
+
+              //
+              margin: auto;
 
               .about-title {
                 font-size: 30px;
@@ -450,10 +495,15 @@ img {
           }
           .about-desc {
             order: 2;
-            padding: 60px;
-            width: 90%;
-            //grid-column: 1 / span 2;
+            //padding: 60px;
+            //width: 90%;
             min-height: 500px;
+
+            //
+            grid-column: 1 / span 2;
+            width: 70vw;
+            margin: auto;
+            padding: 70px 0 0 0;
   
             .dev-desc{
               width: 100%;
@@ -462,13 +512,17 @@ img {
 
           .button-wrapper {
             order: 3;
-            width: 100%;
+            //width: 100%;
             grid-column: 1 / span 2;
             position: relative;
             height: 100px;
 
+            //
+            width: 70vw;
+            margin: auto;
+
             .button-border {
-              left: 40px;
+              left: 0;
               top: 0;
             }
           }
@@ -496,8 +550,12 @@ img {
 
           ul {
             //padding-top: 30px;
-            width: 80%;
+            //width: 80%;
             margin: auto;
+
+            //
+            width: 100%;
+            padding: 0;
 
             .about-list {
               .about-title {
@@ -522,18 +580,23 @@ img {
           }
 
           .about-desc {
-            width: 100%;
-            margin: auto;
-            padding: 50px 35px;
+            //width: 100%;
+            //margin: auto;
+            //padding: 50px 35px;
             //overflow: wrap;
 
-            .dev-desc {
-              width: 85%;
-            }
-          }
+            //
+            //width: 90%;
+            //padding: 50px 0;
 
-          .button-wrapper {
-            left: -10px;
+            .dev-desc {
+              //width: 85%;
+              justify-content: left;
+
+              .about-button {
+
+              }
+            }
           }
         }
       }
@@ -567,7 +630,7 @@ img {
       left: 0;
       height: 3px;
       width: 31px;
-      background: #DE1F0D;
+      background: hsl(4, 98%, 60%);
     }
   }
 
@@ -771,7 +834,7 @@ img {
             }
             &:after {
               //envelope background
-              background-color: #DE1F0D;
+              background-color: hsl(4, 98%, 60%);
               border-radius: 50%;
               width: 65px;
               margin: 0 (calc((100% - 65px)/2));
@@ -1492,7 +1555,7 @@ body {
       width: 0; 
       height: 2px; 
       //background: black;
-      background: #DE1F0D;
+      background: hsl(4, 98%, 60%);
       transition: 100ms width ease 300ms;
   }
   &:after {
@@ -1503,9 +1566,10 @@ body {
       width: 2px; 
       height: 0; 
       //background: black; 
-      background: #DE1F0D;
+      background: hsl(4, 98%, 60%);
       transition: 100ms height ease 200ms;
   }
+
   .button-fill {
     width: 100%;
     pointer-events: none;
@@ -1520,7 +1584,7 @@ body {
       width: 100%;
       color: white;
       //background-color: #181818;
-      background: #DE1F0D;
+      background: hsl(4, 98%, 60%);
       overflow: hidden;
       transform-origin: right center;
       transform: scaleX(0);
@@ -1547,6 +1611,7 @@ body {
     margin: auto;
     padding: 5px;
     line-height: 32px;
+
   &:after{
       content: ''; 
       bottom: -2px; 
@@ -1555,9 +1620,10 @@ body {
       width: 0; 
       height: 2px;
       //background: black; 
-      background: #DE1F0D;
+      background: hsl(4, 98%, 60%);
       transition: 100ms width ease 100ms;
   }
+
   &:before {
       content: '';   
       position: absolute; 
@@ -1566,10 +1632,11 @@ body {
       width: 2px; 
       height: 0;
       //background: black;
-      background: #DE1F0D;
+      background: hsl(4, 98%, 60%);
       transition: 100ms height 0ms;
   }
 }
+
   &:hover{
     border: 2px solid transparent;
     transition: border 0s;

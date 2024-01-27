@@ -31,7 +31,7 @@
     margin-top: 50px;
 
     .header-p {
-      color: #DE1F0D;
+      color: hsl(4, 98%, 60%);
       font-size: 14px;
     }
 
@@ -72,12 +72,12 @@
         cursor: pointer;
 
         &:hover {
-          color: #DE1F0D;
+          color: hsl(4, 98%, 60%);
           margin: 1em 15px;
           transition: margin .25s ease-in-out, color .3s ease-in-out;
 
           svg, strong {
-            color: #DE1F0D;
+            color: hsl(4, 98%, 60%);
             transition: color .3s ease-in-out;
           }
         }
@@ -124,8 +124,7 @@
 
         input, textarea {
           cursor: pointer;
-          //background-color: #181818; 
-          background-color: #0b0b0b;
+          background-color: transparent;
 
           &:placeholder-shown + .border-bold {
             transform: scaleX(0);
@@ -160,9 +159,8 @@
       letter-spacing: 2px;
       color: lightgray;
       margin: 20px 0 0 -12px;
-      box-sizing: border-box; 
-      //background-color: #181818;
-      background-color: #0b0b0b;
+      box-sizing: border-box;
+      background-color: transparent;
       text-indent: .5em;
 
       &:-webkit-autofill {
@@ -315,7 +313,7 @@
       pointer-events: none;
 
       svg {
-        color: #DE1F0D;
+        color: hsl(4, 98%, 60%);
       }
     }
 
@@ -430,7 +428,7 @@
       font-size: 17px;
 
       svg {
-        color: #DE1F0D;
+        color: hsl(4, 98%, 60%);
       }
     }
    
