@@ -3,8 +3,8 @@ body {
 }
 .circular-menu {
   position: fixed;
-  bottom: 30px; 
-  left: 30px;
+  bottom: 0; 
+  left: 10px;
 }
 
 .circular-menu .floating-btn {
@@ -55,18 +55,20 @@ body {
 }
 
 .circular-menu:after {
+  content: '';
   display: block;
-  content: ' ';
   border-radius: 50%;
   position: absolute;
-  top: 25px;
-  right: 25px;
+  //top: 25px;
+  //right: 25px;
   z-index: -2;
   background-color: hsl(4, 98%, 60%);
   transition: all .4s ease;
 
   width: 0px;
   height: 0px;
+  top: 50px;
+  right: 35px;
 }
 
 .circular-menu.active:after {
@@ -385,13 +387,15 @@ body {
     /************************ Nav Hamburger ************************/
 
     .nav-ham {
-      pointer-events: none;
+      cursor: pointer;
       display: block;
       width: 25px;
       margin: 40px auto;
       z-index: 2;
       overflow: hidden;
+      display: block;
     }
+
     .bar {
       width: 1.5rem;
       height: 3px;
@@ -400,7 +404,7 @@ body {
       margin: 7px 0;
       transition: 0.3s;
       transition-delay: .35s;
-      background-color: transparent;
+      background-color: black;
     }
     
     .bar:nth-child(1),
@@ -414,8 +418,9 @@ body {
       {
         position: absolute;
         top: 57px;
+        left: 25px;
         width: 25px;
-        background: transparent;
+        background-color: black;
         height: 3px;
         transition: transform .3s;
       }
@@ -459,7 +464,10 @@ body {
       &:hover {
         .cross {
           .cross-bar {
-            background-color: hsl(4, 98%, 60%);
+            //background-color: hsl(4, 98%, 60%);
+            background-color: white;
+            transform: scaleY(150%);
+            transition: transform .5s ease;
           }
         }
       }

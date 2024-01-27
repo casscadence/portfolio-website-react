@@ -9,18 +9,18 @@ const AboutSlides = ({ about, subIndex, addIndex, direction }) => {
         <div key={about} className={`about-desc ${about}`}>
             <h2>About</h2>
             <h1 className='letter-anim'>Who I Am</h1>
-            <p>My name is Arielle Bartee. I'm a developer and artist from FL.</p>
-            <p>
+            <p className="desc">My name is Arielle Bartee. I'm a developer and artist from FL.</p>
+            <p className="desc">
                 Websites are a canvas for expression, reflecting the heart of a business.
                 Each design tells a visual story, and learning how to share the author's voice inspires me to grow as a developer.
             </p>
-            <p>
+            <p className="desc">
                 My interest in exploring the immersive storytelling of video games strengthens my experience in framing each design.
                 Video games encourage the audience to step into the author's world, and game design shapes the path they take.
                 Tracing those steps in web design to follow the user's journey through the pages outlines how to chart that path 
                 to introduce and build healthier client relationships.
             </p>
-            <p>
+            <p className="desc">
                 Through both web design and game design, I aspire to create works that bring imaginative worlds to life and draw creative minds together.
             </p>
         </div>

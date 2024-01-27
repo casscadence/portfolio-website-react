@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import LoadImages from './loadimages'
 import './index.scss'
 
@@ -9,6 +10,15 @@ const Portfolio = ({scrollPercent, setScrollPercent}) => {
   const topRef = useRef();
   const footerRef = useRef();
   const [windowWidth, setWindowWidth] = useState(window.outerWidth);
+  const imgArray = [
+    { img: '3D1', name: '3D-Modeling' },
+    { img: '2D2', name: 'Agent-Silhouette' },
+    { img: '3D3', name: 'e2i-Harbor-Project' },
+    { img: '3D4', name: 'e2i-Cooking-Project' },
+    { img: '3D5', name: 'Boom-Bots' },
+    { img: '3D6', name: 'Toys-N-Tyrants' },
+    { img: '2D7', name: 'Cornucoopia' }
+  ];
 
   useEffect(() => {
     setTimeout(() => {
@@ -44,186 +54,54 @@ const Portfolio = ({scrollPercent, setScrollPercent}) => {
       <div ref={scrollWindow} className='container portfolio-page' onScroll={onScroll}>
         <div ref={topRef} className='text-zone'>
           <div className='portfolio-wrapper'>
-            <LoadImages
-                imgArray={[
-                  { img: '3D1', name: '3D-Modeling' },
-                  { img: '2D2', name: 'Agent-Silhouette' },
-                  { img: '3D3', name: 'e2i-Harbor-Project' },
-                  { img: '3D4', name: 'e2i-Cooking-Project' },
-                  { img: '3D5', name: 'Boom-Bots' },
-                  { img: '3D6', name: 'Toys-N-Tyrants' },
-                  { img: '2D7', name: 'Cornucoopia' }
-                ]}
-            />      
-            <div className="wrap-container">
-              <div className="gallery-wrap">
-                <div className="item item-1"></div>
-                <div className="item item-2"></div>
-                <div className="item item-3"></div>
-                <div className="item item-4"></div>
-                <div className="item item-5"></div>
-              </div>
-            </div> 
-            <div id="mz-gallery-container">
+          <section className="section">
+            {/* <h1>Nom Nom Gallery</h1> */}
+            <div className="grid">
+              <NavLink to={`3D/3D-Modeling`} className="item item--large">
+                <img src={require('../../assets/images/gallery/3d1.png')} />
+                  <div className="item__details">
+                    3D-Modeling
+                </div>
+              </NavLink>
+              <NavLink to={`2D/Agent-Silhouette`} className="item item--large">
+                <img src={require('../../assets/images/gallery/2d2.png')} />
+                <div className="item__details">
+                  Agent Silhouette
+                </div>
+              </NavLink>
+              <NavLink to={`3D/e2i-Harbor-Project`} className="item item--large">
+                <img src={require('../../assets/images/gallery/3d3.png')} />
+                <div className="item__details">
+                  e2i: Harbor Project
+                </div>
+              </NavLink>
+              <NavLink to={`3D/e2i-Cooking-Project`} className="item item--large">
+                <img src={require('../../assets/images/gallery/3d4.png')} />
+                <div className="item__details">
+                  d2i: Cooking Project
+                </div>
+              </NavLink>
+              <NavLink to={`3D/Boom-Bots`} className="item item--large">
+                <img src={require('../../assets/images/gallery/3d5.png')} />
+                <div className="item__details">
+                  Boom Bots
+                </div>
+              </NavLink>
+              <NavLink to={`3D/Toys-N-Tyrants`} className="item item--large">
+                <img src={require('../../assets/images/gallery/3d6.png')} />
+                <div className="item__details">
+                  Toys N Tyrants
+                </div>
+              </NavLink>
+              <NavLink to={`3D/Cornucoopia`} className="item item--large">
+                <img src={require('../../assets/images/gallery/2d7.png')} />
+                <div className="item__details">
+                  Cornucoopia
+                </div>
+              </NavLink>
+            </div>
+          </section>
 
-  <div id="mz-gallery">
-
-    <figure>
-      <img src="https://picsum.photos/id/818/700/700" alt="Statue of Liberty" width="700" height="700" />
-      <figcaption>Statue of Liberty</figcaption>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </figure>
-
-    <figure>
-      <img src="https://picsum.photos/id/537/700/700" alt="Night Sky" width="700" height="700" />
-      <figcaption>Night Sky</figcaption>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </figure>
-
-    <figure>
-      <img src="https://picsum.photos/id/136/700/700" alt="Ravine Between Rocks" width="700" height="700" />
-      <figcaption>Ravine Between Rocks</figcaption>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </figure>
-
-    <figure>
-      <img src="https://picsum.photos/id/337/700/700" alt="Wheat Farm" width="700" height="700" />
-      <figcaption>Wheat Farm</figcaption>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </figure>
-
-    <figure>
-      <img src="https://picsum.photos/id/737/700/700" alt="City Street" width="700" height="700" />
-      <figcaption>City Street</figcaption>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </figure>
-
-    <figure>
-      <img src="https://picsum.photos/id/217/700/700" alt="Crumbling Pier" width="700" height="700" />
-      <figcaption>Crumbling Pier</figcaption>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </figure>
-
-    <figure>
-      <img src="https://picsum.photos/id/416/700/700" alt="Foggy Mountains" width="700" height="700" />
-      <figcaption>Foggy Mountains</figcaption>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </figure>
-
-    <figure>
-      <img src="https://picsum.photos/id/811/700/700" alt="Dense Forest" width="700" height="700" />
-      <figcaption>Dense Forest</figcaption>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </figure>
-
-    <figure>
-      <img src="https://picsum.photos/id/902/700/700" alt="Sunset Over Mountains" width="700" height="700" />
-      <figcaption>Sunset Over Mountains</figcaption>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </figure>
-
-    <figure>
-      <img src="https://picsum.photos/id/514/700/700" alt="SUV in Front of Building" width="700" height="700" />
-      <figcaption>SUV in Front of Building</figcaption>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </figure>
-
-    <figure>
-      <img src="https://picsum.photos/id/111/700/700" alt="Classic Vehicle" width="700" height="700" />
-      <figcaption>Classic Vehicle</figcaption>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </figure>
-
-    <figure>
-      <img src="https://picsum.photos/id/168/700/700" alt="Stacked Rocks" width="700" height="700" />
-      <figcaption>Stacked Rocks</figcaption>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </figure>
-
-    <figure>
-      <img src="https://picsum.photos/id/210/700/700" alt="Brick Wall" width="700" height="700" />
-      <figcaption>Brick Wall</figcaption>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </figure>
-
-    <figure>
-      <img src="https://picsum.photos/id/270/700/700" alt="Waterfront" width="700" height="700" />
-      <figcaption>Waterfront</figcaption>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </figure>
-
-    <figure>
-      <img src="https://picsum.photos/id/315/700/700" alt="Overgrown Buildings" width="700" height="700" />
-      <figcaption>Overgrown Buildings</figcaption>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </figure>
-
-    <figure>
-      <img src="https://picsum.photos/id/562/700/700" alt="Dying Trees" width="700" height="700" />
-      <figcaption>Dying Trees</figcaption>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </figure>
-
-    <figure>
-      <img src="https://picsum.photos/id/385/700/700" alt="Ocean View" width="700" height="700" />
-      <figcaption>Ocean View</figcaption>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </figure>
-
-  </div>
-
-</div>
           </div>   
         </div>
         <footer ref={footerRef} id='footer' className='footer'>

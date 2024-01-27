@@ -17,7 +17,9 @@ const Topbar = ({scrollPercent}) => {
   } */
 
   return (
-    <div className={`nav-bar _${scrollPercent} ${navActive != true ? 'active-scroll-border' : (scrollPercent > 0 ? 'scroll-border' : '')}`}>
+    //<div className={`nav-bar _${scrollPercent} ${navActive == true ? 'active-scroll-border' : (scrollPercent > 0 ? 'scroll-border' : '')}`}>
+    <div className={`nav-bar _${scrollPercent} ${scrollPercent > 0 ? 'scroll-border' : ''}`}>
+
 {/*         <div className={`logo`} onClick={() => setCount(count+1)}>
           <img src={LogoAB} alt="Logo" />
         </div> */}
@@ -25,7 +27,16 @@ const Topbar = ({scrollPercent}) => {
         <div id="circularMenu" className={`circular-menu circular-menu-left ${navActive ? 'active' : ''}`}>
           <a className="floating-btn" onClick={() => setNavActive(!navActive)}>
             {/* <FontAwesomeIcon icon={faPlus} /> */}
-            <img src={LogoAB} alt="Logo" />
+            {/* <img src={LogoAB} alt="Logo" /> */}
+            <div className={`nav-ham ${navActive}`} onClick={() => setNavActive(!navActive)}>
+              <span className="bar"></span>
+              <span className="bar"></span>
+              <span className="bar"></span>
+              <span className="cross">
+              <span className="cross-bar"></span>
+              <span className="cross-bar"></span>
+              </span>
+            </div>
           </a>
           <menu className="items-wrapper">
             <NavLink exact="true" activeclassname="active" className='menu-item' to="/" onClick={() => setNavActive(!navActive)}>
