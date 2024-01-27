@@ -4,8 +4,7 @@ import Logo from '../../assets/images/logo.png'
 import LogoAB from '../../assets/images/logo-ab.svg'
 import { Link, NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faContactBook, faHome, faPerson, faPhone, faPhotoFilm, faPlus } from '@fortawesome/free-solid-svg-icons'
-import { faFacebook, faGoogle, faLinkedin, faTwitter, faUpwork } from '@fortawesome/free-brands-svg-icons'
+import { faContactBook, faHome, faPhotoFilm, faPlus, faUser } from '@fortawesome/free-solid-svg-icons'
 
 const Topbar = ({scrollPercent}) => {
 
@@ -29,11 +28,11 @@ const Topbar = ({scrollPercent}) => {
             <img src={LogoAB} alt="Logo" />
           </a>
           <menu className="items-wrapper">
-            <NavLink exact="true" activeclassname="active" className='menu-item' to="/">
+            <NavLink exact="true" activeclassname="active" className='menu-item' to="/" onClick={() => setNavActive(!navActive)}>
               <FontAwesomeIcon icon={faHome} />
             </NavLink>
             <NavLink exact="true" activeclassname="active" className='menu-item' to="/about" onClick={() => setNavActive(!navActive)}>
-              <FontAwesomeIcon icon={faPerson} />
+              <FontAwesomeIcon icon={faUser} />
             </NavLink>
             <NavLink exact="true" activeclassname="active" className='menu-item' to="/portfolio" onClick={() => setNavActive(!navActive)}>
               <FontAwesomeIcon icon={faPhotoFilm} />

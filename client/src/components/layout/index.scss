@@ -1540,9 +1540,7 @@ body {
   display: flex;
   background-color: transparent;
   text-align: center;
-  //color: #fff;
   color: #444;
-  //border: 2px solid lightgray;
   border: 2px solid #444;
   transition: background-color .5s;
   z-index: 3;
@@ -1554,7 +1552,6 @@ body {
       left: -2px;
       width: 0; 
       height: 2px; 
-      //background: black;
       background: hsl(4, 98%, 60%);
       transition: 100ms width ease 300ms;
   }
@@ -1565,7 +1562,6 @@ body {
       right: -2px; 
       width: 2px; 
       height: 0; 
-      //background: black; 
       background: hsl(4, 98%, 60%);
       transition: 100ms height ease 200ms;
   }
@@ -1583,7 +1579,6 @@ body {
       height: 100%;
       width: 100%;
       color: white;
-      //background-color: #181818;
       background: hsl(4, 98%, 60%);
       overflow: hidden;
       transform-origin: right center;
@@ -1619,7 +1614,6 @@ body {
       position: absolute; 
       width: 0; 
       height: 2px;
-      //background: black; 
       background: hsl(4, 98%, 60%);
       transition: 100ms width ease 100ms;
   }
@@ -1631,7 +1625,6 @@ body {
       left: -2px;
       width: 2px; 
       height: 0;
-      //background: black;
       background: hsl(4, 98%, 60%);
       transition: 100ms height 0ms;
   }

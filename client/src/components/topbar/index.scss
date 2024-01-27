@@ -3,28 +3,30 @@ body {
 }
 .circular-menu {
   position: fixed;
-  bottom: 10px; 
-  left: 10px;
+  bottom: 30px; 
+  left: 30px;
 }
 
 .circular-menu .floating-btn {
   cursor: pointer;
   display: block;
   border-radius: 50%;
-  background-color: hsl(4, 98%, 60%);
+  background-color: transparent;
   //box-shadow: 0 2px 5px 0 hsla(0, 0%, 0%, .26);  
   color: hsl(0, 0%, 100%);
   text-align: center;
   line-height: 3.9;
   outline: 0;
 
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
 
   img {
     width: 70px;
     animation: bounceIn .5s;
-    margin-top: 5px;
+    position: absolute;
+    left: -5px;
+    top: -5px;
   }
 }
 
@@ -44,8 +46,8 @@ body {
   font-size: 40px;
   transition: transform .2s;  
   position: absolute;
-  left: 32px;
-  bottom: 30px;
+  left: 0px;
+  bottom: 0px;
 }
 
 .circular-menu.active .floating-btn svg {
@@ -57,14 +59,14 @@ body {
   content: ' ';
   border-radius: 50%;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 25px;
+  right: 25px;
   z-index: -2;
   background-color: hsl(4, 98%, 60%);
   transition: all .4s ease;
 
-  width: 100px;
-  height: 100px;
+  width: 0px;
+  height: 0px;
 }
 
 .circular-menu.active:after {
@@ -81,25 +83,30 @@ body {
 
 .circular-menu .menu-item {
   position: absolute;
-  top: .2em;
-  right: .2em;
+  top: 0;
+  right: 0;
   z-index: -1;
   display: block;
   text-decoration: none;
-  color: hsl(0, 0%, 100%);
+  color: transparent;
   font-size: 25px;
   border-radius: 50%;
   text-align: center;
   line-height: 3;
-  background: hsla(0,0%,0%,.1);
+  background: transparent;
   transition: transform .4s ease, background .2s ease;
 
   width: 3em;
   height: 3em;
 }
 
-.circular-menu .menu-item:hover {
-  background-color: hsla(0,0%,0%,.3);
+.circular-menu.circular-menu-left.active .menu-item {
+  background: hsla(0,0%,0%,.1);
+  color: hsl(0, 0%, 100%);
+
+  &:hover {
+    background-color: hsla(0,0%,0%,.3);
+  }
 }
 
 .circular-menu.active .menu-item {
