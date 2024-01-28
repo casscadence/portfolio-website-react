@@ -39,17 +39,33 @@ const Topbar = ({scrollPercent}) => {
             </div>
           </a>
           <menu className="items-wrapper">
-            <NavLink exact="true" activeclassname="active" className='menu-item' to="/" onClick={() => setNavActive(!navActive)}>
+            {/* <NavLink exact="true" activeclassname="active" className='menu-item' to="/" onClick={() => setNavActive(!navActive)}>
               <FontAwesomeIcon icon={faHome} />
+              Home
             </NavLink>
             <NavLink exact="true" activeclassname="active" className='menu-item' to="/about" onClick={() => setNavActive(!navActive)}>
               <FontAwesomeIcon icon={faUser} />
+              About
             </NavLink>
             <NavLink exact="true" activeclassname="active" className='menu-item' to="/portfolio" onClick={() => setNavActive(!navActive)}>
               <FontAwesomeIcon icon={faPhotoFilm} />
+              Portfolio
             </NavLink>
             <NavLink exact="true" activeclassname="active" className='menu-item' to="/contact" onClick={() => setNavActive(!navActive)}>
               <FontAwesomeIcon icon={faContactBook} />
+              Contact
+            </NavLink> */}
+            <NavLink exact="true" activeclassname="active" className='home-link' to="/" onClick={() => setNavActive(!navActive)}>
+              Home
+            </NavLink>
+            <NavLink exact="true" activeclassname="active" className='about-link' to="/about" onClick={() => setNavActive(!navActive)}>
+              About
+            </NavLink>
+            <NavLink exact="true" activeclassname="active" className='portfolio-link' to="/portfolio" onClick={() => setNavActive(!navActive)}>
+              Portfolio
+            </NavLink>
+            <NavLink exact="true" activeclassname="active" className='contact-link' to="/contact" onClick={() => setNavActive(!navActive)}>
+              Contact
             </NavLink>
           </menu>
         </div>

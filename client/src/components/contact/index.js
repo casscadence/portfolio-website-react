@@ -139,10 +139,10 @@ const Contact = ({scrollPercent, setScrollPercent}) => {
               </div>
               <div className='contact-social'>
                 <p className='header-p'>Social</p>
-                <p className='social-info'><a href="https://linkedin.com/in/arielle-bartee"><FontAwesomeIcon icon={faLinkedin} /><strong>LinkedIn &#8212; </strong> linkedin.com/in/arielle-bartee</a></p>
-                <p className='social-info'><a href="https://github.com/casscadence"><FontAwesomeIcon icon={faGithub} /><strong>Github &#8212; </strong> github.com/casscadence</a></p>
-                <p className='social-info'><a href="https://discordapp.com/users/casscadence#3444"><FontAwesomeIcon icon={faDiscord} /><strong>Discord &#8212; </strong> casscadence#3444</a></p>
-                <p className='social-info'><a href="https://join.skype.com/invite/eSqj1ldMJ7dH"><FontAwesomeIcon icon={faSkype} /><strong>Skype &#8212; </strong> arielle.bartee@gmail.com</a></p>
+                <p className='social-info'><a href="https://linkedin.com/in/arielle-bartee"><FontAwesomeIcon icon={faLinkedin} /><strong className='social-brand'>LinkedIn </strong><strong>&#8212;</strong> linkedin.com/in/arielle-bartee</a></p>
+                <p className='social-info'><a href="https://github.com/casscadence"><FontAwesomeIcon icon={faGithub} /><strong className='social-brand'>Github </strong><strong>&#8212;</strong> github.com/casscadence</a></p>
+                <p className='social-info'><a href="https://discordapp.com/users/casscadence#3444"><FontAwesomeIcon icon={faDiscord} /><strong className='social-brand'>Discord </strong><strong>&#8212;</strong> casscadence#3444</a></p>
+                <p className='social-info'><a href="https://join.skype.com/invite/eSqj1ldMJ7dH"><FontAwesomeIcon icon={faSkype} /><strong className='social-brand'>Skype </strong><strong>&#8212;</strong> arielle.bartee@gmail.com</a></p>
               </div>
             </div>
             <div className="contact-form">

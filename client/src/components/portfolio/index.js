@@ -57,47 +57,47 @@ const Portfolio = ({scrollPercent, setScrollPercent}) => {
           <section className="section">
             {/* <h1>Nom Nom Gallery</h1> */}
             <div className="grid">
-              <NavLink to={`3D/3D-Modeling`} className="item item--large">
+              <NavLink to={`3D/3D-Modeling`} className="item item--medium">
                 <img src={require('../../assets/images/gallery/3d1.png')} />
-                  <div className="item__details">
+{/*                   <div className="item__details">
                     3D-Modeling
-                </div>
+                </div> */}
               </NavLink>
-              <NavLink to={`2D/Agent-Silhouette`} className="item item--large">
+              <NavLink to={`2D/Agent-Silhouette`} className="item item--medium">
                 <img src={require('../../assets/images/gallery/2d2.png')} />
-                <div className="item__details">
+{/*                 <div className="item__details">
                   Agent Silhouette
-                </div>
+                </div> */}
               </NavLink>
-              <NavLink to={`3D/e2i-Harbor-Project`} className="item item--large">
+              <NavLink to={`3D/e2i-Harbor-Project`} className="item item--medium">
                 <img src={require('../../assets/images/gallery/3d3.png')} />
-                <div className="item__details">
+{/*                 <div className="item__details">
                   e2i: Harbor Project
-                </div>
+                </div> */}
               </NavLink>
-              <NavLink to={`3D/e2i-Cooking-Project`} className="item item--large">
+              <NavLink to={`3D/e2i-Cooking-Project`} className="item item--medium">
                 <img src={require('../../assets/images/gallery/3d4.png')} />
-                <div className="item__details">
+{/*                 <div className="item__details">
                   d2i: Cooking Project
-                </div>
+                </div> */}
               </NavLink>
-              <NavLink to={`3D/Boom-Bots`} className="item item--large">
+              <NavLink to={`3D/Boom-Bots`} className="item item--medium">
                 <img src={require('../../assets/images/gallery/3d5.png')} />
-                <div className="item__details">
+{/*                 <div className="item__details">
                   Boom Bots
-                </div>
+                </div> */}
               </NavLink>
-              <NavLink to={`3D/Toys-N-Tyrants`} className="item item--large">
+              <NavLink to={`3D/Toys-N-Tyrants`} className="item item--medium">
                 <img src={require('../../assets/images/gallery/3d6.png')} />
-                <div className="item__details">
+{/*                 <div className="item__details">
                   Toys N Tyrants
-                </div>
+                </div> */}
               </NavLink>
-              <NavLink to={`3D/Cornucoopia`} className="item item--large">
+              <NavLink to={`3D/Cornucoopia`} className="item item--medium">
                 <img src={require('../../assets/images/gallery/2d7.png')} />
-                <div className="item__details">
+{/*                 <div className="item__details">
                   Cornucoopia
-                </div>
+                </div> */}
               </NavLink>
             </div>
           </section>

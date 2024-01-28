@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useInView} from 'react-intersection-observer'
 import { useParams, useNavigate } from "react-router-dom"
+import { NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons'
 import ProjectLoad from '../projectload'
@@ -73,7 +74,9 @@ const Project = ({scrollPercent, setScrollPercent}) => {
   return (
     <>
       <div className='container project-page'>
-        <div className='fa-back-arrow'><FontAwesomeIcon icon={faArrowLeftLong} onClick={()=>navigate(-1)} /></div>
+        <NavLink exact="true" activeclassname="active" to="/portfolio">
+          <div className='fa-back-arrow'><FontAwesomeIcon icon={faArrowLeftLong} onClick={()=>navigate(-1)} /></div>
+        </NavLink>
         <p className='project-number'>0{parseInt(data[0].id)}/0{projectDataObjects.length}</p>
         <div ref={scrollWindow} className='text-container' onScroll={onScroll}>
           <div className='text-zone'>

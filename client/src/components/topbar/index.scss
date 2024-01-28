@@ -3,10 +3,33 @@ body {
 }
 .circular-menu {
   position: fixed;
-  bottom: 0; 
-  left: 10px;
+  //bottom: 0; 
+  //left: 10px;
+  left: 40px;
   z-index: 2;
+
+  //
+  top: -15px; 
+  //left: 5vw;
+  //height: fit-content;
+  height: 100px;
 }
+
+.circular-menu.active {
+  width: 100%;
+}
+
+/* .circular-menu:after {
+  pointer-events: all;
+  top: unset;
+  bottom: calc(100vh - 45px);
+  //right: 35px;
+  //bottom: 56px;
+  
+  //
+  //right: 20px
+  left: 15px;
+} */
 
 .circular-menu .floating-btn {
   cursor: pointer;
@@ -19,8 +42,11 @@ body {
   line-height: 3.9;
   outline: 0;
 
-  width: 75px;
+  //width: 75px;
   height: 75px;
+
+  //
+  width: 40px;
 
   img {
     width: 70px;
@@ -57,31 +83,119 @@ body {
 
 .circular-menu:after {
   content: '';
+  pointer-events: all;
   display: block;
   border-radius: 50%;
   position: absolute;
-  //top: 25px;
-  //right: 25px;
+  //top: 55px;
+  //right: 20px;
   z-index: -2;
   background-color: hsl(4, 98%, 60%);
-  transition: all .4s ease;
+  animation: backgroundcolorchanger 60s infinite;
+  transition: all .3s ease;
 
-  width: 0px;
-  height: 0px;
-  top: 50px;
-  right: 35px;
+  //width: 0px;
+  //height: 0px;
+  //top: 55px;
+  width: 1px;
+  height: 1px;
+  //left: 16px;
+  left: 19px;
+  top: 58px;
 }
 
 .circular-menu.active:after {
-  width: 100vw;
-  height: 100vw;
-  transform: scale3d(5.5, 5.5, 1);
+  //width: 100vw;
+  //height: 100vw;
+  //transform: scale3d(5.5, 5.5, 1);
+  //transform: scale(20);
+  transform: scale(5000);
   //transition-timing-function: cubic-bezier(.68, 1.55, .265, 1);
+
+  //
+  //height: calc(100vh + 100px);
 }
 
-.circular-menu .items-wrapper {
+/* .circular-menu .items-wrapper {
   padding: 0;
   margin: 0;
+} */
+
+.circular-menu {
+  .items-wrapper {
+    pointer-events: none;
+    width: fit-content;
+    display: grid;
+    grid-gap: 30px;
+    margin: auto;
+    text-align: center;
+    padding-right: 10vw;
+  }
+
+  .items-wrapper a {
+    position: relative;
+    pointer-events: none;
+    text-decoration: none;
+    font-size: 100px;
+    letter-spacing: 5px;
+    color: transparent;
+    //text-shadow: transparent 3px 6px;
+  }
+}
+
+.circular-menu.active {
+  .items-wrapper {
+    //overflow: hidden;
+
+    a {
+      position: relative;
+      width: 100%;
+      pointer-events: all;
+      animation: fadeInRight .8s;
+      color: white;
+      //text-shadow: rgba(0,0,0,.1) 3px 6px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background: white;
+        height: 30px;
+        width: 0%;
+        transform: skew(-20deg);
+        transition: width .5s cubic-bezier(.3, 0, .2, 1);
+      }
+
+      &:hover {
+        &::after {
+          left: 0;
+          width: 100%;
+          transition: width .5s cubic-bezier(.3, 0, .2, 1);
+        }
+      }
+    }
+
+    a:nth-child(1) {
+      animation-delay: .1s;
+      transition: 1s color .4s;
+    }
+
+    a:nth-child(2) {
+      animation-delay: .2s;
+      transition: 1s color .5s;
+    }
+
+    a:nth-child(3) {
+      animation-delay: .3s;
+      transition: 1s color .6s;
+    }
+
+    a:nth-child(4) {
+      animation-delay: .4s;
+      transition: 1s color .7s;
+    }
+  }
 }
 
 .circular-menu .menu-item {
@@ -123,26 +237,26 @@ body {
 }
 
 .circular-menu.circular-menu-left.active .menu-item:nth-child(1) {
-  transform: translate3d(.5em,-7.5em,0);
+  transform: translate3d(8em, 1.3em, 0);
 }
 
 .circular-menu.circular-menu-left.active .menu-item:nth-child(2) {
-  transform: translate3d(4.2em,-6em,0);
+  transform: translate3d(6.5em, 4.5em, 0);
 }
 
 .circular-menu.circular-menu-left.active .menu-item:nth-child(3) {
-  transform: translate3d(7em,-3.2em,0);
+  transform: translate3d(4em, 7em, 0);
 }
 
 .circular-menu.circular-menu-left.active .menu-item:nth-child(4) {
-  transform: translate3d(8em,.5em,0);
+  transform: translate3d(.5em, 8.5em, 0);
 }
 
 .nav-bar {
     pointer-events: none;
     background-color: transparent;
     width: 85px;
-    height: 100vh;
+    //height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
@@ -391,7 +505,7 @@ body {
     .nav-ham {
       cursor: pointer;
       display: block;
-      width: 25px;
+      width: 30px;
       margin: 40px auto;
       z-index: 2;
       overflow: hidden;
@@ -411,14 +525,15 @@ body {
     }
 
     .bar {
-      width: 1.5rem;
-      height: 3px;
+      //width: 1.5rem;
+      height: 4px;
       display: block;
       padding: 0;
       margin: 7px 0;
       transition: 0.3s;
       transition-delay: .35s;
       background-color: black;
+      border-radius: 5px;
     }
     
     .bar:nth-child(1),
@@ -430,10 +545,15 @@ body {
     .cross {
       //
       position: absolute;
-      top: 47px;
-      left: 25px;
+      //top: 47px;
+      //left: 25px;
       width: 25px;
       height: 25px;
+
+      //
+      //left: 7px;
+      left: 1px;
+      top: 48px;
 
       .cross-bar
       {
@@ -442,10 +562,15 @@ body {
         //left: 25px;
         top: 10px;
         left: 0;
-        width: 25px;
+        //width: 25px;
         background-color: white;
         height: 3px;
         transition: transform .3s;
+
+        //
+        width: 35px;
+        padding: 1px;
+        border-radius: 5px;
       }
   
       .cross-bar:nth-child(1)
@@ -485,40 +610,41 @@ body {
   
 @media (max-width: 1000px) {
   .circular-menu {
-    top: -15px; 
     left: 5vw;
-    height: fit-content;
-  }
 
-  .circular-menu.active::after {
-    height: calc(100vh + 100px);
-  }
+    .items-wrapper {
+      grid-gap: 60px;
 
-  .circular-menu.circular-menu-left .menu-item {
-    //border-radius: 12px;
+      a {
+        font-size: 80px;
+      }
+    }
   }
 
   .circular-menu.circular-menu-left.active .menu-item:nth-child(1) {
     transform: translate3d(15vw,20px,0);
   }
-  
+
   .circular-menu.circular-menu-left.active .menu-item:nth-child(2) {
     transform: translate3d(35vw,20px,0);
   }
-  
+
   .circular-menu.circular-menu-left.active .menu-item:nth-child(3) {
     transform: translate3d(55vw,20px,0);
   }
-  
+
   .circular-menu.circular-menu-left.active .menu-item:nth-child(4) {
     transform: translate3d(75vw,20px,0);
   }
 
-  .circular-menu:after {
-    top: unset;
-    bottom: calc(100vh - 45px);
-    right: 35px;
-    bottom: 56px;
+  .circular-menu.active {
+    .items-wrapper {
+      a {
+        &::after {
+          top: 40px;
+        }
+      }
+    }
   }
 
   .nav-bar {
@@ -725,9 +851,9 @@ body {
 }
 
 @media (max-width: 600px) {
-  .circular-menu.active:after {
+/*   .circular-menu.active:after {
     height: calc(100vh + 100px);
-  }
+  } */
 
   .circular-menu .menu-item {
     top: 10px;
