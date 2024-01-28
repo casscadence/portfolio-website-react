@@ -607,7 +607,7 @@ body {
       }
     }
 
-    .menu-cover {
+/*     .menu-cover {
       pointer-events: all;
       position: absolute;
       background: black;
@@ -630,7 +630,7 @@ body {
         transition: transform .4s;
         transition-delay: 0s;
       }
-    }
+    } */
 
     nav {
       margin-left: 0;
@@ -712,5 +712,11 @@ body {
         margin: 39px 0;
       }
     } */
+  }
+}
+
+@media (max-width: 700px) {
+  .circular-menu.active:after {
+    height: calc(100vw + 100px);
   }
 }
