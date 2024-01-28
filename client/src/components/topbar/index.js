@@ -28,7 +28,7 @@ const Topbar = ({scrollPercent}) => {
           <a className="floating-btn" onClick={() => setNavActive(!navActive)}>
             {/* <FontAwesomeIcon icon={faPlus} /> */}
             {/* <img src={LogoAB} alt="Logo" /> */}
-            <div className={`nav-ham ${navActive}`} onClick={() => setNavActive(!navActive)}>
+            <div className={`nav-ham ${navActive ? 'active' : ''}`} onClick={() => setNavActive(!navActive)}>
               <span className="bar"></span>
               <span className="bar"></span>
               <span className="bar"></span>

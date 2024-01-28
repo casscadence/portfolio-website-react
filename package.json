@@ -12,8 +12,5 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^8.2.1"
-  },
-  "dependencies": {
-    "@fortawesome/react-fontawesome": "^0.2.0"
   }
 }
