@@ -482,7 +482,6 @@ body {
   
 @media (max-width: 1000px) {
   .circular-menu {
-    position: fixed;
     top: -15px; 
   }
 
@@ -725,5 +724,10 @@ body {
     height: 7%;
     display: flex;
     justify-content: center;
+    transition: top .3s ease, height .3s ease, width .3s ease;
+
+    svg {
+      margin: auto;
+    }
   }
 }
