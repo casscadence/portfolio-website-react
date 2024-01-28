@@ -132,7 +132,6 @@ body {
   transform: translate3d(8em,.5em,0);
 }
 
-
 .nav-bar {
     pointer-events: none;
     background-color: transparent;
@@ -477,7 +476,7 @@ body {
       }
     } 
     .active {
-      transition: 0.2s ease;
+      //transition: 0.2s ease;
     }
   }
   
@@ -715,8 +714,16 @@ body {
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
   .circular-menu.active:after {
-    height: calc(100vw + 100px);
+    height: calc(100vh + 100px);
+  }
+
+  .circular-menu .menu-item {
+    top: 10px;
+    width: 80%;
+    height: 7%;
+    display: flex;
+    justify-content: center;
   }
 }
