@@ -837,7 +837,7 @@
 
     .project-desc, .project-details {
         width: 85%;
-        margin: 0 auto 80px auto;
+        margin: 0 auto 10vw auto;
 
         &.animate-desc {
             &::after {
@@ -908,6 +908,14 @@
 
 @media (max-width: 700px) {
     .project-title {
-        font-size: 50px;
+        font-size: 45px;
+    }
+
+    .fa-back-arrow {
+        top: 55px;
+    }
+    
+    .project-number {
+        top: 50px;
     }
 } 

@@ -97,10 +97,16 @@ body {
   text-align: center;
   line-height: 3;
   background: transparent;
-  transition: transform .4s ease, background .2s ease;
+  transition: transform .4s ease, background .2s ease, height .3s ease, width .3s ease;
 
   width: 3em;
   height: 3em;
+  display: flex;
+  justify-content: center;
+
+  svg {
+    margin: auto;
+  }
 }
 
 .circular-menu.circular-menu-left.active .menu-item {
@@ -475,14 +481,17 @@ body {
         transform: scale(1) rotateZ(45deg);
       }
     } 
-    .active {
-      //transition: 0.2s ease;
-    }
   }
   
 @media (max-width: 1000px) {
   .circular-menu {
     top: -15px; 
+    left: 5vw;
+    height: fit-content;
+  }
+
+  .circular-menu.active::after {
+    height: calc(100vh + 100px);
   }
 
   .circular-menu.circular-menu-left .menu-item {
@@ -508,6 +517,8 @@ body {
   .circular-menu:after {
     top: unset;
     bottom: calc(100vh - 45px);
+    right: 35px;
+    bottom: 56px;
   }
 
   .nav-bar {
@@ -538,6 +549,10 @@ body {
       }
     }
 
+    .nav-ham {
+      margin: 40px 0 0;
+    }
+
 /*     .nav-ham {
       pointer-events: all;
       cursor: pointer;
@@ -559,7 +574,7 @@ body {
       content: '';
       position: absolute;
       top: 0;
-      height: 2.5px;
+      height: 3.5px;
       width: 0;
       background: hsl(4, 98%, 60%);
       z-index: 5;
@@ -568,7 +583,7 @@ body {
     @for $i from 1 through 102 {
       &._#{$i}{
         &:before {
-          height: 2.5px;
+          height: 3.5px;
           width: #{$i} + '%';
         }
       }
@@ -720,14 +735,7 @@ body {
 
   .circular-menu .menu-item {
     top: 10px;
-    width: 80%;
-    height: 7%;
-    display: flex;
-    justify-content: center;
-    transition: top .3s ease, height .3s ease, width .3s ease;
-
-    svg {
-      margin: auto;
-    }
+    width: 60px;
+    height: 60px;
   }
 }
