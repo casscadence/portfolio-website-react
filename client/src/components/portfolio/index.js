@@ -10,15 +10,6 @@ const Portfolio = ({scrollPercent, setScrollPercent}) => {
   const topRef = useRef();
   const footerRef = useRef();
   const [windowWidth, setWindowWidth] = useState(window.outerWidth);
-  const imgArray = [
-    { img: '3D1', name: '3D-Modeling' },
-    { img: '2D2', name: 'Agent-Silhouette' },
-    { img: '3D3', name: 'e2i-Harbor-Project' },
-    { img: '3D4', name: 'e2i-Cooking-Project' },
-    { img: '3D5', name: 'Boom-Bots' },
-    { img: '3D6', name: 'Toys-N-Tyrants' },
-    { img: '2D7', name: 'Cornucoopia' }
-  ];
 
   useEffect(() => {
     setTimeout(() => {
@@ -56,24 +47,57 @@ const Portfolio = ({scrollPercent, setScrollPercent}) => {
           <div className='portfolio-wrapper'>
 
           <div className="card">
-            <input id="rad1" name="rad" type="radio" />
+            <input id="rad1" name="rad" defaultChecked="true" type="radio" />
             <div className="rad1">
-                <h1> 1 </h1>
+                <h3 className="project-number">01/07</h3>
+                <h1 className="project-name">3D Modeling</h1>
                 <div className="btn"></div>
             </div>
             <input id="rad2" name="rad" type="radio" />
               <div className="rad2">
-                <h1> 2 </h1>
+                <h3 className="project-number">02/07</h3>
+                <h1 className="project-name">Agent Silhouette</h1>
                 <div className="btn"></div>
               </div>
-              <input id="rad3" name="rad" defaultChecked="true" type="radio" />
+              <input id="rad3" name="rad" type="radio" />
               <div className="rad3">
-                <h1> 3 </h1>
+                <h3 className="project-number">03/07</h3>
+                <h1 className="project-name">e2i: Harbor</h1>
+                <div className="btn"></div>
+              </div>
+              <input id="rad4" name="rad" type="radio" />
+              <div className="rad4">
+                <h3 className="project-number">04/07</h3>
+                <h1 className="project-name">e2i: Cooking</h1>
+                <div className="btn"></div>
+              </div>
+              <input id="rad5" name="rad" type="radio" />
+              <div className="rad5">
+                <h3 className="project-number">05/07</h3>
+                <h1 className="project-name">Toys N Tyrants</h1>
+                <div className="btn"></div>
+              </div>
+              <input id="rad6" name="rad" type="radio" />
+              <div className="rad6">
+                <h3 className="project-number">06/07</h3>
+                <h1 className="project-name">Boom Bots</h1>
+                <div className="btn"></div>
+              </div>
+              <input id="rad7" name="rad" type="radio" />
+              <div className="rad7">
+                <h3 className="project-number">07/07</h3>
+                <h1 className="project-name">Cornucoopia</h1>
                 <div className="btn"></div>
               </div>
               <input type="checkbox" />
               <h2>Read More</h2>
-              <p>Sample Text Here</p>
+              <p className='project-sum project-01'>3D Modeling</p>
+              <p className='project-sum project-02'>Single Player, third person, side-scrolling, stealth platformer</p>
+              <p className='project-sum project-03'>Exploration</p>
+              <p className='project-sum project-04'>Single Player, third person, endless runner</p>
+              <p className='project-sum project-05'>Single Player & Co-Op, third person, Hack-and-Slash</p>
+              <p className='project-sum project-06'>Single player, first person, 3D-shooter</p>
+              <p className='project-sum project-07'>Multiplayer, physical board game</p>
               <div className="shapes"></div>
               <div className="photo">
                 <div></div>

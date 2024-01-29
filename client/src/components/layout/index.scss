@@ -1039,12 +1039,12 @@ img {
     }
 
     p {
-      font-size: 13px;
-      color: #181818;
-      font-family: sans-serif;
-      font-weight: 300;
-      max-width: fit-content;
-      animation: pulse 1s;
+      //font-size: 13px;
+      //color: #181818;
+      //font-family: sans-serif;
+      //font-weight: 300;
+      //max-width: fit-content;
+      //animation: pulse 1s;
 
       @for $i from 1 through 3 {
         &:nth-of-type(#{$i}) {
