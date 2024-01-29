@@ -47,18 +47,18 @@ const Portfolio = ({scrollPercent, setScrollPercent}) => {
           <div className='portfolio-wrapper'>
 
           <div className="card">
-            <input id="rad1" name="rad" defaultChecked="true" type="radio" />
-            <div className="rad1">
-                <h3 className="project-number">01/07</h3>
-                <h1 className="project-name">3D Modeling</h1>
-                <div className="btn"></div>
-            </div>
-            <input id="rad2" name="rad" type="radio" />
-              <div className="rad2">
-                <h3 className="project-number">02/07</h3>
-                <h1 className="project-name">Agent Silhouette</h1>
-                <div className="btn"></div>
+              <input id="rad1" name="rad" defaultChecked="true" type="radio" />
+              <div className="rad1">
+                  <h3 className="project-number">01/07</h3>
+                  <h1 className="project-name">3D Modeling</h1>
+                  <div className="btn"></div>
               </div>
+              <input id="rad2" name="rad" type="radio" />
+                <div className="rad2">
+                  <h3 className="project-number">02/07</h3>
+                  <h1 className="project-name">Agent Silhouette</h1>
+                  <div className="btn"></div>
+                </div>
               <input id="rad3" name="rad" type="radio" />
               <div className="rad3">
                 <h3 className="project-number">03/07</h3>
@@ -89,25 +89,25 @@ const Portfolio = ({scrollPercent, setScrollPercent}) => {
                 <h1 className="project-name">Cornucoopia</h1>
                 <div className="btn"></div>
               </div>
-              <input type="checkbox" />
-              <h2>Read More</h2>
-              <p className='project-sum project-01'>3D Modeling</p>
-              <p className='project-sum project-02'>Single Player, third person, side-scrolling, stealth platformer</p>
-              <p className='project-sum project-03'>Exploration</p>
-              <p className='project-sum project-04'>Single Player, third person, endless runner</p>
-              <p className='project-sum project-05'>Single Player & Co-Op, third person, Hack-and-Slash</p>
-              <p className='project-sum project-06'>Single player, first person, 3D-shooter</p>
-              <p className='project-sum project-07'>Multiplayer, physical board game</p>
-              <div className="shapes"></div>
-              <div className="photo">
-                <div></div>
-                <div></div>
-                <div></div>
+            <input type="checkbox" />
+            <h2>Read More</h2>
+            <p className='project-sum project-01'>3D Modeling</p>
+            <p className='project-sum project-02'>Single Player, third person, side-scrolling, stealth platformer</p>
+            <p className='project-sum project-03'>Exploration</p>
+            <p className='project-sum project-04'>Single Player, third person, endless runner</p>
+            <p className='project-sum project-05'>Single Player & Co-Op, third person, Hack-and-Slash</p>
+            <p className='project-sum project-06'>Single player, first person, 3D-shooter</p>
+            <p className='project-sum project-07'>Multiplayer, physical board game</p>
+            <div className="shapes"></div>
+            <div className="photo">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div className="blob">
+              <div className="glob">
               </div>
-              <div className="blob">
-                <div className="glob">
-                </div>
-              </div>
+            </div>
           </div>
 
           <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
@@ -178,7 +178,6 @@ const Portfolio = ({scrollPercent, setScrollPercent}) => {
           AB Portfolio - 2023 © Arielle Bartee
         </footer>
       </div>
-      <div className={scrollPercent == 0 && windowWidth < 1100 ? 'arrow arrow-height invisible' : 'arrow arrow-height in-visible'}><img src={require(`../../assets/icons/downarrow.png`)} alt='' /></div>
     </>
   )
 }
