@@ -651,25 +651,4 @@
         animation: colorchanger 60s infinite;
       }
     }
-   
-    .flat-button {
-      color: #FC94AF;
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-decoration: none;
-      padding: 8px 10px;
-      border: 1px solid #FC94AF;
-      float: left;
-      border-radius: 4px;
-      background: 0 0;
-      text-transform: uppercase;
-      float: right;
-      text-align: center;
-      margin-right: 10px;
-
-      &:hover {
-        background: #FC94AF;
-        color: #000;
-      }
-    }
   }
