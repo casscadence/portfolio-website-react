@@ -33,6 +33,7 @@ body {
 
 .circular-menu .floating-btn {
   cursor: pointer;
+  pointer-events: all;
   display: block;
   border-radius: 50%;
   background-color: transparent;

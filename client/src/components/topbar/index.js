@@ -25,7 +25,7 @@ const Topbar = ({scrollPercent}) => {
         </div> */}
 
         <div id="circularMenu" className={`circular-menu circular-menu-left ${navActive ? 'active' : ''}`}>
-          <a className="floating-btn" onClick={() => setNavActive(!navActive)}>
+          <div className="floating-btn" onClick={() => setNavActive(!navActive)}>
             {/* <FontAwesomeIcon icon={faPlus} /> */}
             {/* <img src={LogoAB} alt="Logo" /> */}
             <div className={`nav-ham ${navActive ? 'active' : ''}`} onClick={() => setNavActive(!navActive)}>
@@ -37,7 +37,7 @@ const Topbar = ({scrollPercent}) => {
               <span className="cross-bar"></span>
               </span>
             </div>
-          </a>
+          </div>
           <menu className="items-wrapper">
             {/* <NavLink exact="true" activeclassname="active" className='menu-item' to="/" onClick={() => setNavActive(!navActive)}>
               <FontAwesomeIcon icon={faHome} />
