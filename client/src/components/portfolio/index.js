@@ -57,17 +57,17 @@ const Portfolio = ({scrollPercent, setScrollPercent}) => {
 
           <div className="card">
             <input id="rad1" name="rad" type="radio" />
-            <div for="rad1">
+            <div className="rad1">
                 <h1> 1 </h1>
                 <div className="btn"></div>
             </div>
             <input id="rad2" name="rad" type="radio" />
-              <div for="rad2">
+              <div className="rad2">
                 <h1> 2 </h1>
                 <div className="btn"></div>
               </div>
               <input id="rad3" name="rad" defaultChecked="true" type="radio" />
-              <div for="rad3">
+              <div className="rad3">
                 <h1> 3 </h1>
                 <div className="btn"></div>
               </div>
@@ -95,7 +95,7 @@ const Portfolio = ({scrollPercent, setScrollPercent}) => {
           </filter>
           </defs>
           </svg>
-          <svg class="svg" viewBox="0 0 400 400">
+          <svg className="svg" viewBox="0 0 400 400">
           <defs>
           <filter id="duotone-filter-post-one">
           <feColorMatrix type="matrix" values="0.14453125 0 0 0 0.33203125 0.71875 0 0 0 0.27734375 -0.34765625 0 0 0 0.73046875 0 0 0 1 0"></feColorMatrix>
