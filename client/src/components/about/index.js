@@ -12,6 +12,7 @@ const About = ({scrollPercent, setScrollPercent}) => {
   const { ref: inViewRef, inView } = useInView();
   const [direction, setDirection] = useState('middle');
   const [about, setAbout] = useState();
+  const particleBg = [];
  
   useEffect(() => {
     setTimeout(() => {
@@ -57,6 +58,13 @@ const About = ({scrollPercent, setScrollPercent}) => {
       setDirection('about')
     }, 800)
   }, [about])
+
+  for (let i = 0; i < 100; i++) {
+    particleBg.push(<div key={i} className={`dotWrapper dotWrapper-${i}`}>
+      <div className={`dot dot-${i}`}>
+      </div>
+    </div>);
+  }
   
   return (
     <>
@@ -77,6 +85,7 @@ const About = ({scrollPercent, setScrollPercent}) => {
             </ul>
             <AboutSlides about={about} direction={direction}></AboutSlides>
           </div>
+          {particleBg}
         </div>
         <footer ref={footerRef} id='footer' className='footer'>
           AB Portfolio - 2023 © Arielle Bartee

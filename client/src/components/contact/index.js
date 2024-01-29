@@ -32,6 +32,7 @@ const Contact = ({scrollPercent, setScrollPercent}) => {
   const footerRef = useRef()
   const form = useRef()
   const { ref: inViewRef, inView } = useInView()
+  const particleBg = [];
 
   useEffect(() => {
     setTimeout(() => {
@@ -117,6 +118,13 @@ const Contact = ({scrollPercent, setScrollPercent}) => {
         buttonValid,
         buttonInvalid
       )
+  }
+
+  for (let i = 0; i < 50; i++) {
+    particleBg.push(<div key={i} className={`dotWrapper dotWrapper-${i}`}>
+      <div className={`dot dot-${i}`}>
+      </div>
+    </div>);
   }
 
   return (
@@ -209,12 +217,12 @@ const Contact = ({scrollPercent, setScrollPercent}) => {
                         </div>
                         <p className='contact-message'>{contactMessage}</p>
                       </button>
-                      
                   </div>
                 </ul>
               </form>
             </div>
           </div>
+          {particleBg}
         </div>
         <footer ref={footerRef} id='footer' className='footer'>
           AB Portfolio - 2023 © Arielle Bartee

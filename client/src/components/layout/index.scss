@@ -270,7 +270,8 @@ img {
         display: flex;
         flex-flow: nowrap;
         //background-color: #181818;
-        background-color: #0b0b0b;
+        //background-color: #0b0b0b;
+        background-color: rgba(0,0,0,.95);
         border-radius: 10px;
         padding-top: 20px;
 
@@ -731,7 +732,7 @@ img {
       flex-wrap: no-wrap;
       min-height: 700px;
       //background-color: #181818;
-      background-color: #0b0b0b;
+      background-color: rgba(0,0,0,.95);
       border-radius: 10px;
       padding-top: 20px;
     }
@@ -1346,7 +1347,7 @@ img {
 
 @keyframes colorchanger {
   0% {
-  color: crimson;
+  color: mediumvioletred;
   }
   15%{
   color: hsl(4, 98%, 60%);
@@ -1364,13 +1365,13 @@ img {
   color: violet;
   }
   100%{
-  color: crimson;
+  color: mediumvioletred;
   }
 }
 
 @keyframes backgroundcolorchanger {
   0% {
-  background: crimson;
+  background: mediumvioletred;
   }
   15%{
   background: hsl(4, 98%, 60%);
@@ -1388,6 +1389,119 @@ img {
   background: violet;
   }
   100%{
-  background: crimson;
+  background: mediumvioletred;
+  }
+}
+
+	.dotWrapper {
+		position: absolute;
+    z-index: -1;
+
+		@for $i from 1 through 50 {
+			&-#{$i} {
+				top: random(100) * 1%;
+				left: random(100) * 1%;
+				animation: flying (random(50)+20)+s ease-in-out (random(100)/-10)+s infinite alternate; 
+        .dot {
+          width: random(20) + 5px;
+          height: random(20) + 5px;
+        }
+        @if $i % 2 == 0 {
+          .dot {
+            border-radius: 5px;
+          }
+        }	
+        @else if $i % 2 != 0 {
+          .dot {
+            border-radius: 100%;
+          }
+        }
+      }
+		}
+
+	}
+	
+	.dot {	
+		@for $i from 1 through 50 {
+			&-#{$i} {
+				background: rgba(random(255),random(255), random(255), 1);
+				transform-origin: (random(30)-15)+px (random(30)-15)+px;
+				animation: rotating (random(20)+10)+s ease-in-out (random(100)/-10)+s infinite; 
+			}
+		}
+		
+	}
+
+@keyframes rotating {
+	0% {
+		opacity: 0;
+		transform: rotate(0deg);
+	}
+	25%, 75% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes flying {
+	0% {
+		transform: translate(0, 0);
+	}
+	10% {
+		transform: translate(20px, 50px);
+	}
+	20% {
+		transform: translate(-30px, 10px);
+	}
+	30% {
+		transform: translate(10px, 60px);
+	}
+	40% {
+		transform: translate(50px, 00px);
+	}
+	50% {
+		transform: translate(-10px, -40px);
+	}
+	60% {
+		transform: translate(-40px, 20px);
+	}
+	70% {
+		transform: translate(30px, -30px);
+	}
+	80% {
+		transform: translate(0px, -60px);
+	}
+	90% {
+		transform: translate(40px, 10px);
+	}
+	100% {
+		transform: translate(0, 0);
+	}
+}
+
+@keyframes morph{
+  0%,100%{
+ border-radius: 21% 29% 35% 15% / 22.5% 22.5% 27.5% 27.5%;
+    transform: translate3d(0,0,0) rotateZ(0.01deg);
+  }
+  34%{
+     border-radius: 35% 15% 23% 27% / 15% 14.5% 35.5% 35%; 
+    /*      border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%; */
+    transform:  translate3d(0,5px,0) rotateZ(0.01deg);
+  }
+  50%{
+    opacity: .89;
+    transform: translate3d(0,0,0) rotateZ(0.01deg);
+  }
+  67%{
+    border-radius: 35% 30% 30% 45% / 35% 50% 30% 25% ;
+/*    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60% ; */
+    transform: translate3d(0,-3px,0) rotateZ(0.01deg);
   }
 }
