@@ -257,7 +257,7 @@ body {
     pointer-events: none;
     background-color: transparent;
     width: 85px;
-    //height: 100vh;
+    height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
@@ -271,8 +271,9 @@ body {
       top: 0;
       left: 0;
       height: 0;
-      width: 2.5px;
+      width: 4px;
       background: hsl(4, 98%, 60%);
+      animation: backgroundcolorchanger 60s ease infinite;
       z-index: 5;
     }
 
@@ -438,6 +439,7 @@ body {
               transform: scaleX(0);
               transform-origin: left;
               transition: transform .3s;
+              animation: backgroundcolorchanger 60s ease infinite;
             }
   
             &:hover {
@@ -658,7 +660,11 @@ body {
     z-index: 1;
     display: flex;
     background-color: white;
-    transition: background-color .1s;
+    transition: background-color .2s;
+
+    &._0 {
+      background-color: transparent;
+    }
 
     nav {
       width: 100vw;
@@ -699,7 +705,6 @@ body {
       top: 0;
       height: 3.5px;
       width: 0;
-      background: hsl(4, 98%, 60%);
       z-index: 5;
     }
 
