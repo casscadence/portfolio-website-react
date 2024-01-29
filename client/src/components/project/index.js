@@ -8,12 +8,9 @@ import ProjectLoad from '../projectload'
 import './index.scss'
 
 const Project = ({scrollPercent, setScrollPercent}) => {
-  const { selectionId } = useParams();
   const { projectId } = useParams();
-  const [loaderName, setLoaderName] = useState('loader');
   const [imgIdx, setImgIdx] = useState([0,1,2,3,4]);
   const [direction, setDirection] = useState('middle');
-  const [textAnim, setTextAnim] = useState('');
   const { ref: descRef, inView: descVisible } = useInView();
   const { ref: detRef, inView: detVisible } = useInView();
   const navigate = useNavigate();
@@ -48,7 +45,6 @@ const Project = ({scrollPercent, setScrollPercent}) => {
 
   useEffect(() => {
     document.title = 'Portfolio | Arielle Bartee';
-    setTextAnim('animate-text')
   }, [])
 
   const subIndex = () => {
