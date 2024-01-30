@@ -5,7 +5,7 @@ body {
   position: fixed;
   //bottom: 0; 
   //left: 10px;
-  left: 40px;
+  left: 1%;
   z-index: 2;
 
   //
@@ -131,6 +131,7 @@ body {
     margin: auto;
     text-align: center;
     padding-right: 10vw;
+    height: 80vh;
   }
 
   .items-wrapper a {
@@ -253,17 +254,39 @@ body {
   transform: translate3d(.5em, 8.5em, 0);
 }
 
+.logo-link {
+  position: relative;
+  float: right;
+  width: 60px;
+  padding: 10px 1%;
+  z-index: 2;
+
+  img {
+    width: 100%;
+    transition: all .5s ease;
+  }
+}
+
+.nav-bar {
+  &:has(> .circular-menu.active) {
+    .logo-link {
+      img {
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+}
+
 .nav-bar {
     pointer-events: none;
     background-color: transparent;
-    width: 85px;
+    width: 100vw;
     height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 2;
     display: block;
-    transition: background-color .1s;
 
     &:before {
       content: '';
@@ -271,7 +294,7 @@ body {
       top: 0;
       left: 0;
       height: 0;
-      width: 4px;
+      width: 6px;
       background: hsl(4, 98%, 60%);
       animation: backgroundcolorchanger 60s ease infinite;
       z-index: 5;
@@ -282,52 +305,6 @@ body {
         &:before {
           height: #{$i} + '%';
         }
-      }
-    }
-
-    &:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 100px;
-      margin: 2.25vh;    
-      background-color: black;
-      transition: 300ms transform ease 100ms;
-      transform: scaleY(0);
-      transform-origin: center;
-    }
-
-    &.active-scroll-border {      
-      
-      &:after {
-        transition: 300ms transform ease 300ms;
-        transform: scaleY(1);
-      }
-    }
-
-    .logo {
-      cursor: pointer;
-      pointer-events: all;
-      user-select: all;
-      position: absolute;
-      display: block;
-      margin: 10px auto;
-      padding: 0 15px;
-      z-index: 5;
-
-      &:hover, &:active, &:focus {
-        img {
-          animation: rubberBand 1s;
-        }
-      }
-      
-      img {
-        user-select: none;
-        pointer-events: none;
-        width: 60px;
-        transition: 0.5s;
-        display: block;
-        margin: auto;
       }
     }
 
@@ -650,6 +627,11 @@ body {
     }
   }
 
+  .logo-link {
+    width: 60px;
+    padding: 10px 6%;
+  }
+
   .nav-bar {
     cursor: unset;
     pointer-events: all;
@@ -658,13 +640,8 @@ body {
     position: absolute;
     top: 0;
     z-index: 1;
-    display: flex;
-    background-color: white;
+    background-color: transparent;
     transition: background-color .2s;
-
-    &._0 {
-      background-color: transparent;
-    }
 
     nav {
       width: 100vw;
@@ -699,54 +676,14 @@ body {
       }
     } */
 
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      height: 3.5px;
-      width: 0;
-      z-index: 5;
-    }
-
     @for $i from 1 through 102 {
       &._#{$i}{
         &:before {
-          height: 3.5px;
+          height: 5px;
           width: #{$i} + '%';
         }
       }
     } 
-
-    &:after {
-      top: 85px;
-      left: 0;
-      width: 96vw;
-      margin: 0 2vw;
-      height: 3px;      
-      transform: scaleX(0);
-      transition: 300ms transform ease 100ms;
-    }
-  
-    &.scroll-border, &.active-scroll-border {  
-      &:after {
-        transition: 100ms transform ease 300ms;
-        transform: scaleX(1);
-      }
-    }
-
-    .logo {
-      opacity: 1;
-      position: relative;
-      display: flex;
-      z-index: 2;
-      height: 100%;
-      margin: 0;
-      
-      img {
-        margin-top: 6px;
-        transition: 0.5s;
-      }
-    }
 
 /*     .menu-cover {
       pointer-events: all;

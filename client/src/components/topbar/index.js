@@ -20,10 +20,6 @@ const Topbar = ({scrollPercent}) => {
     //<div className={`nav-bar _${scrollPercent} ${navActive == true ? 'active-scroll-border' : (scrollPercent > 0 ? 'scroll-border' : '')}`}>
     <div className={`nav-bar _${scrollPercent} ${scrollPercent > 0 ? 'scroll-border' : ''}`}>
 
-{/*         <div className={`logo`} onClick={() => setCount(count+1)}>
-          <img src={LogoAB} alt="Logo" />
-        </div> */}
-
         <div id="circularMenu" className={`circular-menu circular-menu-left ${navActive ? 'active' : ''}`}>
           <div className="floating-btn" onClick={() => setNavActive(!navActive)}>
             {/* <FontAwesomeIcon icon={faPlus} /> */}
@@ -69,6 +65,10 @@ const Topbar = ({scrollPercent}) => {
             </NavLink>
           </menu>
         </div>
+
+        <NavLink exact="true" activeclassname="active" className='logo-link' to="/" onClick={() => setNavActive(!navActive)}>
+          <img src={LogoAB} alt="Logo" />
+        </NavLink>
 
 {/*       <div className={activeClass === 'active' ? 'menu-cover active' : 'menu-cover'}></div>
       <nav className={`${activeClass === 'active' ? 'active-nav' : ''} ${count % 2 != 0 ? 'open-navigation' : ''}`}>
