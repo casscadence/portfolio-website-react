@@ -138,7 +138,11 @@ const Home = ({loaderName, setLoaderName, setLink}) => {
                   <div className='underlay'>
                     <div id='underlay-cover' className='underlay-cover'>
                       <div className='bg-img-wrapper'>
+                        {window.innerWidth < 800 ? 
                         <img src={require(`../../assets/images/animegirlbg.png`)} className='bg-img' alt='' />
+                        :
+                        <img src={require(`../../assets/images/animegirlbgHQ.png`)} className='bg-img' alt='' />
+                        }
                       </div>
                     </div>
                   </div>
@@ -150,7 +154,11 @@ const Home = ({loaderName, setLoaderName, setLink}) => {
                   </div>
                   <div className='home-img-wrapper'>
                     <div className='girl-img-wrapper'>
+                      {window.innerWidth < 800 ? 
                       <img src={require(`../../assets/images/animegirl.png`)} className={`girl-img ${loaderName === 'loader-end' ? 'ready' : ''}`} id='girl' alt='' />
+                      :
+                      <img src={require(`../../assets/images/animegirlHQ.png`)} className={`girl-img ${loaderName === 'loader-end' ? 'ready' : ''}`} id='girl' alt='' />  
+                      }
                       <div className='overlay-girl'></div>
                     </div>
                     <div className='overlay-img-wrapper'>
