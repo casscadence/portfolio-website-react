@@ -37,6 +37,10 @@ $colornumber: random(2);
 $colors: deepskyblue, hotpink;
 $randomcolor: nth($colors, $colornumber);
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   overflow-x: hidden;
   margin: 0;
