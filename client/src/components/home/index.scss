@@ -570,13 +570,11 @@ $violet: deepskyblue;
             }
 
             svg {
-              width: 1.25vw;
-              height: 1.25vw;
+              font-size: 1.5vw;
             }
-
+            
             .icon-mask {
               width: 1.25vw;
-              min-width: 1.25vw;
               height: 1.25vw;
             }
 
@@ -592,15 +590,17 @@ $violet: deepskyblue;
           }
 
           svg {
-            margin-right: 1vw;
-            width: .2vw;
+            margin: auto 1vw auto 0;
+            //width: .2vw;
+            //font-size: 1.5vw;
+            font-size: .2vw;
           }
 
           .icon-mask {
             margin: auto 1vw;
             float: left;
             width: .2vw;
-            min-width: .2vw;
+            //min-width: .2vw;
             height: .2vw;
           }
         }
@@ -762,286 +762,12 @@ $violet: deepskyblue;
       }
     }
 
-    .frontend-container {
-      position: relative;
-    }
-
-    .backend-container {
-      position: relative;
-    }
-  
-    .frontend-container, .backend-container {
-      position: relative;
-      width: fit-content;
-      display: flex;
-      margin: auto;
-      min-height: 10vh;
-    
-      &.animate-frontend, &.animate-backend {
-        
-        .frontend-icon, .backend-icon {
-          width: 5vw;
-          height: 5vw;
-          display: flex;
-          border-radius: 10%;
-          animation-name: jump;
-          animation-duration: .7s;
-          animation-timing-function: cubic-bezier(.2,.5,.5,1);
-          animation-direction: ease-in-out;
-    
-          svg, img {
-            width: 2vw;
-            height: 2vw;
-            color: white;
-          }
-        }
-
-        .frontend-icon {
-
-          &:hover {
-            &::before {
-              color: lightgray;
-              background: black;
-            }
-          }
-
-          &::before {
-            content: '';
-            position: absolute;
-            top: -30%;
-            width: 100%;
-            font-family: 'Aristotelica';
-            font-weight: bold;
-            font-size: 1vw;
-            color: transparent;
-            text-align: center;
-            background: transparent;
-            border-radius: 5px;
-            transition: color .3s ease, background .3s ease;
-          }
-
-          &:nth-child(1)::before {
-            content: 'HTML';
-          }
-
-          &:nth-child(2)::before {
-            content: 'CSS';
-          }
-
-          &:nth-child(3)::before {
-            content: 'SASS';
-          }
-
-          &:nth-child(4)::before {
-            content: 'Bootstrap';
-          }
-
-          &:nth-child(5)::before {
-            content: 'TypeScript';
-          }
-
-          &:nth-child(5) {
-            display: flex;
-            justify-content: center;
-            .icon-mask {
-              background-color: white;
-              mask: url(../../assets/svg/ts3.svg) no-repeat center / contain;
-              -webkit-mask: url(../../assets/svg/ts3.svg) no-repeat center / contain;
-              width: 38%;
-            }
-          }
-
-          &:nth-child(6)::before {
-            content: 'JavaScript';
-          }
-
-          &:nth-child(7)::before {
-            content: 'React';
-          }
-
-          &:nth-child(8)::before {
-            content: 'Angular';
-          }
-        }
-
-        .backend-icon {
-
-          &:hover {
-            &::before {
-              color: lightgray;
-              background: black;
-            }
-          }
-
-          &::before {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            width: 100%;
-            font-family: 'Aristotelica';
-            font-weight: bold;
-            font-size: 1vw;
-            color: transparent;
-            text-align: center;
-            background: transparent;
-            border-radius: 5px;
-            transition: color .3s ease, background .3s ease;
-          }
-
-          &:nth-child(1)::before {
-            content: 'NodeJS';
-          }
-
-          &:nth-child(2)::before {
-            content: 'Express';
-          }
-
-          &:nth-child(2) {
-            display: flex;
-            justify-content: center;
-            .icon-mask {
-              background-color: white;
-              mask: url(../../assets/svg/ex.svg) no-repeat center / contain;
-              -webkit-mask: url(../../assets/svg/ex.svg) no-repeat center / contain;
-              width: 30%;
-            }
-          }
-
-          &:nth-child(3)::before {
-            content: 'C#';
-          }
-
-          &:nth-child(3) {
-            display: flex;
-            justify-content: center;
-            .icon-mask {
-              background-color: white;
-              mask: url(../../assets/svg/cs4.svg) no-repeat center / contain;
-              -webkit-mask: url(../../assets/svg/cs4.svg) no-repeat center / contain;
-              width: 50%;
-            }
-          }
-
-          &:nth-child(4)::before {
-            content: 'PHP';
-          }
-
-          &:nth-child(5)::before {
-            content: 'Java';
-          }
-
-          &:nth-child(6)::before {
-            content: 'Spring';
-          }
-
-          &:nth-child(7)::before {
-            content: 'SQL';
-          }
-        }
-      }
-    
-      .frontend-icon, .backend-icon {   
-        cursor: pointer; 
-        position: relative;
-        top: 0px;
-        height: 20px;
-        width: 20px;
-        margin: 1vw;
-        font-size: 10px;
-        color: #0b0b0b;
-        outline: 5px solid white;
-        background-color: deepskyblue;
-        border-radius: 50%;
-        transition: transform .1s linear, outline-offset .1s linear, width .5s ease, height .5s ease, color .2s ease, outline .2s ease;
-    
-        &:hover {
-          transform: scale(1.1);
-          outline-offset: -9px;
-    
-          svg, img {
-            transform: scale(1.1);
-          }
-        }
-    
-        svg, img {
-          position: relative;
-          height: 1px;
-          width: 1px;
-          margin: auto;
-          transition: transform .1s linear;
-        }
-
-        img {
-          filter: grayscale(1);
-        }
-      }
-    
-      .frontend-icon {   
-
-        &:nth-child(2) { 
-          animation-delay: .07s;
-        }
-      
-        &:nth-child(3) { 
-          animation-delay: .14s;
-        }
-      
-        &:nth-child(4) { 
-          animation-delay: .21s;
-        }
-    
-        &:nth-child(5) {    
-          animation-delay: .28s;  
-        }
-      
-        &:nth-child(6) {  
-          animation-delay: .35s;
-        }
-      
-        &:nth-child(7) {    
-          animation-delay: .42s;
-        }
-
-        &:nth-child(8) {    
-          animation-delay: .49s;
-        }
-      }
-    
-      .backend-icon {
-      
-        &:nth-child(2) {  
-          animation-delay: .07s;
-        }
-      
-        &:nth-child(3) { 
-          animation-delay: .14s;
-        }
-      
-        &:nth-child(4) {   
-          animation-delay: .21s;
-        }
-    
-        &:nth-child(5) {   
-          animation-delay: .28s;  
-        }
-      
-        &:nth-child(6) {   
-          animation-delay: .35s;
-        }
-      
-        &:nth-child(7) { 
-          animation-delay: .42s;
-        }
-      }
-    }
-
     @keyframes jump {   
-      0%  { top: 0px; transform: scale(.25,.25); border-radius: 50%; }
+      0%  { transform: scale(.25,.25); }
       25% { transform: scale(.55,.55) }
-      40% { top: -80px; transform: scale(2,2) }
-      55% { border-radius: 10%; }
-      65% { top: 0px; transform: scale(.8,.8) }
-      100% { transform: scale(1,1); border-radius: 10% }
+      40% { transform: scale(2,2) }
+      65% { transform: scale(.8,.8) }
+      100% { transform: scale(1,1);}
     } 
   }
 
@@ -1475,17 +1201,6 @@ $violet: deepskyblue;
           li {
             font-size: 1.25vw;
             line-height: 3vw;
-
-            &.animate-li {
-              @for $i from 0 through 9 {
-                &:nth-child(#{$i}) {
-                  svg, .icon-mask {
-                    width: 2vw;
-                    height: 2vw;
-                  }
-                }
-              }
-            }
           }
         }
       }
@@ -1625,26 +1340,42 @@ $violet: deepskyblue;
     .skills {
       min-height: 25vh;
       width: 85%;
+      gap: 4vw;
 
       h1 {
         font-size: 4vw;
       }
 
       .frontend, .backend, .modeling, .graphics {
+        h1 {
+          font-size: 3.75vw;
+        }
+
         ul {
           li {
-            font-size: 1.5vw;
-          }
-        }
-      }
+            font-size: 1.75vw;
+            line-height: 5vw;
+            -webkit-text-stroke: 0px white;
+            text-stroke: 0px white;
 
-      .frontend-container, .backend-container {
-        &.animate-frontend, &.animate-backend {
-          .frontend-icon, .backend-icon {
-      
-            svg, img {
-              width: 3.7vw;
-              height: 3.7vw;
+            svg {
+              font-size: 3vw;
+            }
+
+            .icon-mask {
+              width: 2.75vw;
+              height: 2.75vw;
+            }
+
+            &.animate-li {
+              svg {
+                font-size: 3vw;
+              }
+
+              .icon-mask {
+                width: 2.75vw;
+                height: 2.75vw;
+              }
             }
           }
         }
@@ -1682,45 +1413,6 @@ $violet: deepskyblue;
 
     .skills-header {
       padding: 2vw 7%;
-    }
-
-    .skills {
-      gap: 4vw;
-      
-      .frontend-container, .backend-container {
-        &.animate-frontend, &.animate-backend {
-          .frontend-icon, .backend-icon {
-            width: 9vw;
-            height: 9vw;
-          }
-        }
-      }
-
-      .frontend, .backend, .modeling, .graphics {
-        h1 {
-          font-size: 3.75vw;
-        }
-
-        ul {
-          li {
-            font-size: 1.75vw;
-            line-height: 5vw;
-            -webkit-text-stroke: 0px white;
-            text-stroke: 0px white;
-
-            &.animate-li {
-              @for $i from 0 through 9 {
-                &:nth-child(#{$i}) {
-                  svg, .icon-mask {
-                    width: 2.75vw;
-                    height: 2.75vw;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
     }
 
     .contact-wrapper {
@@ -1807,17 +1499,6 @@ $violet: deepskyblue;
           li {
             font-size: 2vw;
             line-height: 5vw;
-
-            &.animate-li {
-              @for $i from 0 through 9 {
-                &:nth-child(#{$i}) {
-                  svg, .icon-mask {
-                    width: 3vw;
-                    height: 3vw;
-                  }
-                }
-              }
-            }
           }
         }
       }
