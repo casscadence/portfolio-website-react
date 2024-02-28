@@ -1,13 +1,19 @@
 import './index.scss'
-import LogoAB from '../../assets/images/logo-ab.svg'
 
 const AnimatedLoader = ({ loaderName }) => {
   return (
-    <div className={`${loaderName}`}>
-        <div className='loader-logo'>
-          <img src={LogoAB} alt="Logo" />
-          <span className='loader-anim'></span>
-        </div>
+    <div className={`loader ${loaderName}`}>
+      <div key={loaderName} className="loader-container">
+        <div className="square topleft"></div>
+        <div className="square top"></div>
+        <div className="square topright"></div>
+        <div className="square left"></div>
+        <div className="spacer"></div>
+        <div className="square right"></div>
+        <div className="square bottomleft"></div>
+        <div className="square bottom"></div>
+        <div className="square bottomright"></div>
+      </div>
     </div>
   )
 }
