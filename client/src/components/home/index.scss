@@ -1035,7 +1035,8 @@ $violet: deepskyblue;
           width: fit-content;
 
           a {
-            font-size: 1.25vw;
+            //font-size: 1.25vw;
+            font-size: 1.5vw;
             color: white;
             display: grid;
 
@@ -1065,7 +1066,7 @@ $violet: deepskyblue;
         }
 
         &.social-cv {
-          margin-top: 1vw;
+          //margin-top: 1vw;
           width: 10vw;
         }
 
