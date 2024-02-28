@@ -10,6 +10,9 @@
 @media (max-width: 800px) {
   .circular-menu {
     padding: 0 2vw;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
   }
 }
 
@@ -62,19 +65,21 @@
   
   .items-wrapper {
     position: relative;
+    right: 0;
     pointer-events: none;
-    width: 50vw;
+    width: 40vw;
     display: flex;
     height: 90vh;
     float: right;
 
     .items-group {
       position: relative;
+      right: 0;
       height: 50vh;
       width: fit-content;
       display: grid;
       grid-gap: 4vw;
-      margin: auto;
+      margin: auto 0;
     }
   }
 
