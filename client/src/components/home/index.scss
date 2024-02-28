@@ -1397,10 +1397,6 @@ $violet: deepskyblue;
     .home-wrapper {
       height: 95vw;
 
-      &:before {
-
-      }
-
       .underlay {
         position: absolute;
 
@@ -1709,6 +1705,8 @@ $violet: deepskyblue;
           li {
             font-size: 1.75vw;
             line-height: 5vw;
+            -webkit-text-stroke: 0px white;
+            text-stroke: 0px white;
 
             &.animate-li {
               @for $i from 0 through 9 {
