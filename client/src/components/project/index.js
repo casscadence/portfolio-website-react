@@ -23,7 +23,6 @@ const Project = ({setLoaderName, link}) => {
       projectDataObjects.filter(project => {return project.title === projectId.replace(/-/g, ' ')})
     )
     setContributions(data[0].contribution.split(/[\s,]+/));
-    console.log(models);
   }, [link])
 
   useEffect(() => {
