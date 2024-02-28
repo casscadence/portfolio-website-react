@@ -1245,16 +1245,27 @@ $violet: deepskyblue;
       display: flex;
       justify-content: center;
 
-      @for $i from 0 through 9 {
-        span:nth-of-type(#{$i}){
-          transition: transform 1s ease;
-          transition-delay: #{$i*.05}s;
+      span {
+        position: relative;
+        top: 150%;
+        left: 0;
+        transform: skewY(10deg);
+        transition: top .7s ease, transform .7s ease;
+
+        @for $i from 0 through 11 {
+          @if($i > 0) {
+            &:nth-child(#{$i}){
+              transition-delay: #{$i*.05}s;
+            }
+          }
         }
       }
 
-      span {
-        position: relative;
-        y: 0;
+      &.animate-contact-title {
+        span {
+          top: 0;
+          transform: skewY(0deg);
+        }
       }
     }
 

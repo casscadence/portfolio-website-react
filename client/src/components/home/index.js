@@ -33,6 +33,7 @@ const Home = ({loaderName, setLoaderName, setLink}) => {
   const { ref: lineref, inView: linerefVisible } = useInView();
   const { ref: skillsref, inView: skillsrefVisible } = useInView();
   const { ref: projectref, inView: projectrefVisible } = useInView();
+  const { ref: contactref, inView: contactrefVisible } = useInView();
 
   useEffect(() => {
     setLoaderName('');
@@ -105,20 +106,6 @@ const Home = ({loaderName, setLoaderName, setLink}) => {
       .fromTo(('.projects-wrapper'),
       { '--title': '#0b0b0b', '--subtitle': '#3d3d3d'},
       { '--title': 'white', '--subtitle': 'lightgray'}); 
-    });
-
-    const contactLetters = gsap.utils.toArray('.contact-letter');
-    contactLetters.forEach((text, i) => {
-      let atl = gsap.timeline({
-        scrollTrigger: {
-          start: 'bottom center',
-          trigger: '.projects-wrapper',
-          scrub: 1
-        }
-      });
-     atl.fromTo(text,
-      { y: 500, ease: 'power4.out', delay: 1, skewY: 17, stagger: {amount: 0.3} },
-      { y: 0, skewY: 0 }); 
     });
 
     const textElements = gsap.utils.toArray('.text');
@@ -260,10 +247,10 @@ const Home = ({loaderName, setLoaderName, setLink}) => {
                   </NavLink>
                 </div>
                 <div className='contact-wrapper'>
-                    <h1>
+                    <h1 className={`contact-title ${contactrefVisible ? 'animate-contact-title' : ''}`}>
                       {contactTitle.split('').map((letter, i) => <span key={i} className='contact-letter'>{letter}</span>)}
                     </h1>
-                    <div className='footer-links'>
+                    <div ref={contactref} className='footer-links'>
                       <div>
                         <ul>
                           <li><a href="https://linkedin.com/in/arielle-bartee"><strong className='social-brand'>LinkedIn </strong><div className='arrow-mask'></div></a></li>
