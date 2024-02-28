@@ -1433,8 +1433,6 @@ $violet: deepskyblue;
 
         img {
           width: 100%;
-          -webkit-mask: url(http://localhost:3000/static/media/brush-frameG.9a67a937d5b16a499624.svg) 100%;
-          mask: url(http://localhost:3000/static/media/brush-frameG.9a67a937d5b16a499624.svg) 100%;
           mask-position: left;
         }
       }
@@ -1593,13 +1591,6 @@ $violet: deepskyblue;
       .bg-img-wrapper {
         width: 55%;
         float: right;
-
-        img {
-          width: 100%;
-          -webkit-mask: url(http://localhost:3000/static/media/brush-frameG.9a67a937d5b16a499624.svg) 100%;
-          mask: url(http://localhost:3000/static/media/brush-frameG.9a67a937d5b16a499624.svg) 100%;
-          mask-position: left;
-        }
       }
     }
 
