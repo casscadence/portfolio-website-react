@@ -279,7 +279,7 @@ const Home = ({loaderName, setLoaderName, setLink}) => {
                               <p>casscadence<span>@</span>gmail.com</p>
                             </a>
                           </li>
-                          <li className='social-cv'><a href="" onClick={fetchResume}><strong>Download CV</strong></a></li>
+                          <li className='social-cv' onClick={fetchResume}><strong>Download CV</strong></li>
                         </ul>
                       </div>
                     </div>

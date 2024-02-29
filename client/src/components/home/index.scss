@@ -1033,6 +1033,17 @@ $violet: deepskyblue;
         line-height: 0;
         width: 100%;
 
+        &.social-cv {
+          cursor: pointer;
+          font-size: 1.5vw;
+          color: white;
+          font-family: 'League Spartan', 'League Spartan Semi Bold';
+
+          &:hover {
+            color: deepskyblue;
+          }
+        }
+
         &.social-email, &.social-cv {
           line-height: 0;
           width: fit-content;
@@ -1277,6 +1288,10 @@ $violet: deepskyblue;
 
       ul {
         li {
+          &.social-cv {
+            font-size: 2vw;
+          }
+
           &.social-email, &.social-cv {
             width: 15vw;
             a {
@@ -1462,20 +1477,24 @@ $violet: deepskyblue;
 
       ul {
         li {
+          &.social-cv {
+            font-size: 2.5vw;
+          }
+
           &.social-email, &.social-cv {
             width: 20vw;
             a {
-              font-size: 3vw;
+              font-size: 2.5vw;
 
               p {
-                font-size: 2vw;
+                font-size: 1.5vw;
                 padding: 1.5vw 0;
               }
             }
           }
 
           a {
-            font-size: 3.5vw;
+            font-size: 2.5vw;
           }
         }
       }
@@ -1569,6 +1588,26 @@ $violet: deepskyblue;
         .date-clipped {
           bottom: -6vw;
           font-size: 2.5vw;
+        }
+      }
+    }
+
+    .contact-wrapper {
+      ul {
+        li {
+          &.social-cv {
+            font-size: 3vw;
+          }
+
+          &.social-email, &.social-cv {
+            a {
+              font-size: 3vw;
+
+              p {
+                font-size: 2vw;
+              }
+            }
+          }
         }
       }
     }
