@@ -21,7 +21,16 @@ const app = express();
       for(let i=0; i<=projectData.length-1; i++) {
         if(projectData[i].project_title === req.params.projectId){
           res.json({ 
-            id: projectData[i].project_id,
+            id: 'k',
+            title: 'k',
+            date: 'k',
+            desc: 'k',
+            type: 'k',
+            tools: 'k',
+            contribution: 'k',
+            number: 'k',
+            length: 'k'
+/*             id: projectData[i].project_id,
             title: projectData[i].project_title,
             date: projectData[i].project_date,
             desc: projectData[i].project_desc,
@@ -29,7 +38,7 @@ const app = express();
             tools: projectData[i].project_tools,
             contribution: projectData[i].project_contribution,
             number: i,
-            length: projectData.length
+            length: projectData.length */
           })
         }
       }
