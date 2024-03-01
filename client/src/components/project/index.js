@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom"
 import './index.scss'
 
 const Project = ({setLoaderName, link}) => {
-  const { selectionId } = useParams();
   const { projectId } = useParams();
 
   const projectDataObjects = [{id: 1, logo: 'ab', category: 'models', title: 'Modeling', client: 'personal', role: 'N/A', date: '2017 +', desc: 'Miscellaneous modeling works & works in progress', type: '3D Modeling', tools: 'Maya, Blender, Substance Painter, Illustrator', contribution: 'N/A'},
