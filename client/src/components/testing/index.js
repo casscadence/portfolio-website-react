@@ -2,9 +2,23 @@ import { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom"
 import './index.scss'
 
-const Project = ({setLoaderName, link}) => {
-  const { selectionId } = useParams();
-  const { projectId } = useParams();
+const useFetch = (url) => {
+  const [fetchdata, setFetchData] = useState(['']);
+
+  useEffect(() => {
+    fetch(url)
+    .then(res => res.json())
+    .then(json => {
+      setFetchData({ title: json.title, date: json.date, desc: json.desc, type: json.type, tools: json.tools, contribution: json.contribution, number: json.number, length: json.length})
+    })
+  },[url]);
+  
+  return fetchdata;
+}; 
+
+const Testing = ({setLoaderName, link}) => {
+  const { selectionId } = useParams('k');
+  const { projectId } = useParams('Modeling');
 
   const projectDataObjects = [{id: 1, logo: 'ab', category: 'models', title: 'Modeling', client: 'personal', role: 'N/A', date: '2017 +', desc: 'Miscellaneous modeling works & works in progress', type: '3D Modeling', tools: 'Maya, Blender, Substance Painter, Illustrator', contribution: 'N/A'},
   {id: 2, logo: 'psi', category: 'graphics, animation, programming', title: 'Agent Silhouette', client: 'PSI Games', role: 'Lead Artist/Programmer', date: '2016', desc: 'Deep underground in a faraway jungle, hides an expansive complex dedicated to the heinous plans of an evil mad scientist. Your mission, should you choose to accept it, is to infiltrate the facility, using your graceful agility and expert stealth tactics to navigate the area and avoid its hostile inhabitants. Reach your objective without being seen, thwart the villain’s master plan, and save the world!', type: 'Single Player, third person, side-scrolling, stealth platformer', tools: 'Unity, Visual Studio, Photoshop, Illustrator', contribution: 'environment, animation, UI, programming, logo, marketing'},
@@ -16,10 +30,9 @@ const Project = ({setLoaderName, link}) => {
   const [models, setModels] = useState(['modeling', 'surgery', 'burgers', 'girl']);
   const [button, setButton] = useState('first');
 
+  const fetchdata = useFetch(`/testing`);
+
   useEffect(() => {
-    setData(
-      projectDataObjects.filter(project => {return project.title === projectId.replace(/-/g, ' ')})
-    )
     setContributions(data[0].contribution.split(/[\s,]+/));
   }, [link])
 
@@ -57,7 +70,7 @@ const Project = ({setLoaderName, link}) => {
           <div className='project-desc'>
               <div className='project-header'>
               <div className='subtitle'><img src={require(`../../assets/logos/${data[0].logo}.png`)} alt='' /><h3>{data[0].client}</h3></div>
-              <h1>{data[0].title}</h1>
+              <h1>{fetchdata.title}</h1>
               </div>
               
               <div className='details'>
@@ -149,4 +162,4 @@ const Project = ({setLoaderName, link}) => {
   )
 }
 
-export default Project
+export default Testing

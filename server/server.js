@@ -17,7 +17,7 @@ const app = express();
       })
     }) */
 
-    app.get('/:selectionId/:projectId', (req, res) => {
+    app.get('/testing', (req, res) => {
       res.json({ 
         id: 'k',
         title: 'k',
