@@ -3,7 +3,7 @@ const { createPool } = require('mysql');
 const app = express();
 
 (async () => {
-    const pool = createPool({
+/*     const pool = createPool({
       host: process.env.DB_HOST,
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
@@ -15,22 +15,24 @@ const app = express();
       pool.query("select * from project", (err, res) => {
         resolve(res)
       })
-    })
+    }) */
 
-    app.get('/portfolio/:selectionId/:projectId', (req, res) => {
-      for(let i=0; i<=projectData.length-1; i++) {
+    app.get('/:selectionId/:projectId', (req, res) => {
+      res.json({ 
+        id: 'k',
+        title: 'k',
+        date: 'k',
+        desc: 'k',
+        type: 'k',
+        tools: 'k',
+        contribution: 'k',
+        number: 'k',
+        length: 'k',
+      })
+/*       for(let i=0; i<=projectData.length-1; i++) {
         if(projectData[i].project_title === req.params.projectId){
           res.json({ 
-            id: 'k',
-            title: 'k',
-            date: 'k',
-            desc: 'k',
-            type: 'k',
-            tools: 'k',
-            contribution: 'k',
-            number: 'k',
-            length: 'k'
-/*             id: projectData[i].project_id,
+            id: projectData[i].project_id,
             title: projectData[i].project_title,
             date: projectData[i].project_date,
             desc: projectData[i].project_desc,
@@ -38,15 +40,17 @@ const app = express();
             tools: projectData[i].project_tools,
             contribution: projectData[i].project_contribution,
             number: i,
-            length: projectData.length */
+            length: projectData.length
           })
         }
-      }
+      } */
     })
     
 })()
 
-app.listen(process.env.PORT || 3000, () => {console.log('Server started on port railway')});
+app.listen(5000, () => {console.log('Server started on port 5000')});
+
+/* app.listen(process.env.PORT || 3000, () => {console.log('Server started on port railway')}); */
 
 /* if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
