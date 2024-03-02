@@ -7,7 +7,9 @@ const useFetch = (url) => {
   useEffect(() => {
     fetch(url)
     .then(res => res.json())
-    .then(json => console.log(json.title))
+    .then(json => {
+      setFetchData({ title: json.title, date: json.date, desc: json.desc, type: json.type, tools: json.tools, contribution: json.contribution, number: json.number, length: json.length})
+    })
   },[url]);
   
   return fetchdata;
@@ -37,6 +39,10 @@ const Testing = ({setLoaderName, link}) => {
     setTimeout(() => {
       return (setLoaderName('loader-end'));
     }, 3000);
+    
+    fetch('/testing')
+    .then(res => res.json())
+    .then(json => console.log(json.title))
   }, [])
 
   useEffect(() => {
