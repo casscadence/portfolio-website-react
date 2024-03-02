@@ -41,8 +41,7 @@ const Testing = ({setLoaderName, link}) => {
     }, 3000);
     
     fetch('/testing')
-    .then(res => res.json())
-    .then(json => console.log(json.title))
+    .then(res => console.log(res))
   }, [])
 
   useEffect(() => {
