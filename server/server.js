@@ -7,9 +7,9 @@ const port = process.env.PORT || 3000;
   origin: 'https://ariellebartee.netlify.app'
 })); */
 
-app.get('/',(req, res) => { 
+/* app.get('/',(req, res) => { 
   res.json("welcome to our server") 
-}); 
+});  */
 
 /* app.get('/testing', cors(corsOptions), (req, res) => {
   res.json({ 
