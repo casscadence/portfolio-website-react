@@ -10,7 +10,13 @@ let corsOptions = {
  
 app.use(cors())
 
-app.get('/testing', cors(corsOptions), (req, res) => { 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "https://ariellebartee.netlify.app"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+app.get('/testing', (req, res, next) => {
   res.json({ 
     id: 'k',
     title: 'k',
@@ -29,6 +35,20 @@ app.get("/", (req, res) => res.type('html').send(html));
 
 app.get('/secret', (req, res) => { 
   res.type('html').send(htmltest);
+}); 
+
+app.get('/testing', (req, res) => { 
+  res.json({ 
+    id: 'k',
+    title: 'k',
+    date: 'k',
+    desc: 'k',
+    type: 'k',
+    tools: 'k',
+    contribution: 'k',
+    number: 'k',
+    length: 'k',
+  })
 }); 
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
