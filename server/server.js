@@ -2,6 +2,13 @@ const express = require('express');
 const { createPool } = require('mysql');
 const app = express();
 
+app.use(cors())
+
+var corsOptions = {
+  origin: 'https://ariellebartee.netlify.app',
+  optionsSuccessStatus: 200
+}
+
 (async () => {
 /*     const pool = createPool({
       host: process.env.DB_HOST,
@@ -17,7 +24,7 @@ const app = express();
       })
     }) */
 
-    app.get('/testing', (req, res) => {
+    app.get('/testing', cors(corsOptions), (req, res) => {
       res.json({ 
         id: 'k',
         title: 'k',
