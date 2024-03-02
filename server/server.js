@@ -118,7 +118,7 @@ const htmltest = `
   </head>
   <body>
     <section>
-      Hello from Render!
+      Hello from Secret!
     </section>
   </body>
 </html>
