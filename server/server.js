@@ -2,10 +2,28 @@ const express = require('express');
 const { createPool } = require('mysql');
 const app = express();
 
-var corsOptions = {
-  origin: 'https://ariellebartee.netlify.app',
+let corsOptions = {
+  origin: ['http://ariellebartee.netlify.app'],
   optionsSuccessStatus: 200
 }
+
+app.get('/',(req, res) => { 
+  res.json("welcome to our server") 
+}); 
+
+app.get('/testing', cors(corsOptions), (req, res) => {
+  res.json({ 
+    id: 'k',
+    title: 'k',
+    date: 'k',
+    desc: 'k',
+    type: 'k',
+    tools: 'k',
+    contribution: 'k',
+    number: 'k',
+    length: 'k',
+  })
+})
 
 (async () => {
 /*     const pool = createPool({
