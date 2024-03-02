@@ -10,16 +10,26 @@ let corsOptions = {
  
 app.use(cors(corsOptions))
 
-app.get('/secret', (req, res) => { 
-  res.type('html').send(htmltest);
-}); 
-
-app.get('https://ariellebartee.netlify.app/secret', (req, res) => { 
-  res.type('html').send(htmltest);
+app.get('/testing', (req, res) => { 
+  res.json({ 
+    id: 'k',
+    title: 'k',
+    date: 'k',
+    desc: 'k',
+    type: 'k',
+    tools: 'k',
+    contribution: 'k',
+    number: 'k',
+    length: 'k',
+  })
 }); 
 //Testing End
 
 app.get("/", (req, res) => res.type('html').send(html));
+
+app.get('https://ariellebartee.netlify.app/secret', (req, res) => { 
+  res.type('html').send(htmltest);
+}); 
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
