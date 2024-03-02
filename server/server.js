@@ -10,7 +10,7 @@ let corsOptions = {
  
 app.use(cors())
 
-app.get('https://ariellebartee.netlify.app/testing', (req, res) => { 
+app.get('/testing', cors(corsOptions), (req, res) => { 
   res.json({ 
     id: 'k',
     title: 'k',
