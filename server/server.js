@@ -31,7 +31,7 @@ app.get('/testing', (req, res, next) => {
 }); 
 //Testing End
 
-app.get("/", (req, res) => res.type('html').send(html));
+//app.get("/", (req, res) => res.type('html').send(html));
 
 app.get('/secret', (req, res) => { 
   res.type('html').send(htmltest);
