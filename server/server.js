@@ -4,11 +4,15 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 //Testing Start
-app.use(cors({
-  origin: 'https://ariellebartee.netlify.app'
-}));
+let corsOptions = { 
+  origin : ['https://ariellebartee.netlify.app'], 
+} 
+ 
+app.use(cors(corsOptions)) 
 
-app.get('/testing2', cors(corsOptions), res.type('html').send(html));
+app.get('/secret', cors(corsOptions) , (req, res) => { 
+  res.type('html').send(html);
+}); 
 //Testing End
 
 app.get("/", (req, res) => res.type('html').send(html));
