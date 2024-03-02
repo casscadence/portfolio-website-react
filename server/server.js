@@ -1,6 +1,7 @@
 const express = require('express');
 //const { createPool } = require('mysql');
 const app = express();
+const port = process.env.PORT || 3000;
 
 /* app.use(cors({
   origin: 'https://ariellebartee.netlify.app'
@@ -70,7 +71,11 @@ app.get('/',(req, res) => {
     
 })()
 
-app.listen(5000, () => {console.log('Server started on port 5000')});
+app.listen(port, () => {
+  console.log(`App listening on port: ${port}`);
+});
+
+//app.listen(port, () => {console.log('Server started on port 5000')});
 
 /* app.listen(process.env.PORT || 3000, () => {console.log('Server started on port railway')}); */
 
