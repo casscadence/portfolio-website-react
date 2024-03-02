@@ -3,36 +3,6 @@ const cors = require('cors')
 const app = express();
 const port = process.env.PORT || 3001;
 
-//Testing Start
-let corsOptions = { 
-  origin : ['https://ariellebartee.netlify.app'], 
-} 
- 
-app.use(cors())
-
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://ariellebartee.netlify.app"); // update to match the domain you will make the request from
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
-
-app.get('/testing', (req, res, next) => {
-  res.json({ 
-    id: 'k',
-    title: 'k',
-    date: 'k',
-    desc: 'k',
-    type: 'k',
-    tools: 'k',
-    contribution: 'k',
-    number: 'k',
-    length: 'k',
-  })
-}); 
-//Testing End
-
-//app.get("/", (req, res) => res.type('html').send(html));
-
 app.get('/secret', (req, res) => { 
   res.type('html').send(htmltest);
 }); 
