@@ -8,9 +8,13 @@ let corsOptions = {
   origin : ['https://ariellebartee.netlify.app'], 
 } 
  
-app.use(cors(corsOptions)) 
+app.use(cors(corsOptions))
 
 app.get('/secret', (req, res) => { 
+  res.type('html').send(htmltest);
+}); 
+
+app.get('https://ariellebartee.netlify.app/secret', (req, res) => { 
   res.type('html').send(htmltest);
 }); 
 //Testing End
