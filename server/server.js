@@ -10,7 +10,7 @@ let corsOptions = {
  
 app.use(cors(corsOptions)) 
 
-app.get('/secret', cors(corsOptions) , (req, res) => { 
+app.get('/secret', cors(corsOptions), (req, res) => { 
   res.type('html').send(html);
 }); 
 //Testing End
