@@ -1,16 +1,16 @@
 const express = require('express');
-const { createPool } = require('mysql');
+//const { createPool } = require('mysql');
 const app = express();
 
-app.use(cors({
+/* app.use(cors({
   origin: 'https://ariellebartee.netlify.app'
-}));
+})); */
 
 app.get('/',(req, res) => { 
   res.json("welcome to our server") 
 }); 
 
-app.get('/testing', cors(corsOptions), (req, res) => {
+/* app.get('/testing', cors(corsOptions), (req, res) => {
   res.json({ 
     id: 'k',
     title: 'k',
@@ -22,7 +22,7 @@ app.get('/testing', cors(corsOptions), (req, res) => {
     number: 'k',
     length: 'k',
   })
-})
+}) */
 
 (async () => {
 /*     const pool = createPool({
@@ -39,7 +39,7 @@ app.get('/testing', cors(corsOptions), (req, res) => {
       })
     }) */
 
-    app.get('/testing', cors(corsOptions), (req, res) => {
+    app.get('/testing', (req, res) => {
       res.json({ 
         id: 'k',
         title: 'k',
