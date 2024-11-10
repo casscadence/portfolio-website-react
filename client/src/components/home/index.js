@@ -149,7 +149,7 @@ const Home = ({loaderName, setLoaderName, setLink}) => {
                   <div className='home-text-wrapper'>
                     <div className={`welcome-header ${loaderName === 'loader-end' ? 'ready' : ''}`}>
                       <h1>Hi, I'm Arielle</h1>
-                      <div className='role'>+ Web Developer | 3D Modeler | Artist</div>
+                      <div className='role'>+ Web Developer | Programmer | Artist</div>
                     </div>
                   </div>
                   <div className='home-img-wrapper'>
