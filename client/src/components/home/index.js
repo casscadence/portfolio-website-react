@@ -262,7 +262,7 @@ const Home = ({loaderName, setLoaderName, setLink}) => {
                       <div>
                         <ul>
                           <li><a href="https://linkedin.com/in/arielle-bartee"><strong className='social-brand'>LinkedIn </strong><div className='arrow-mask'></div></a></li>
-                          <li><a href="https://join.skype.com/invite/eSqj1ldMJ7dH"><strong className='social-brand'>Skype </strong><div className='arrow-mask'></div></a></li>
+                          <li><a href="https://us05web.zoom.us/j/7374509290?pwd=ET1NAM25rphj2tQGY5LK4EGpTUPiLs.1"><strong className='social-brand'>Zoom </strong><div className='arrow-mask'></div></a></li>
                         </ul>
                       </div>
                       <div>
