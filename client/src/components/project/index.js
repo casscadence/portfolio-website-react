@@ -122,7 +122,7 @@ const Project = ({setLoaderName, link}) => {
                     <img key={`${link}1`} className='animate-img' src={require(`../../assets/images/projects/${models[0]}.png`)} alt='' />
                     <img key={`${link}2`} className='animate-img' src={require(`../../assets/images/projects/${models[1]}.png`)} alt='' />
                     <img key={`${link}3`} className='animate-img' src={require(`../../assets/images/projects/${models[2]}.png`)} alt='' />
-                    <img key={`${link}4`} className='animate-img' src={require(`../../assets/images/projects/${models[3]}.png`)} alt='' />
+                    {/*<img key={`${link}4`} className='animate-img' src={require(`../../assets/images/projects/${models[3]}.png`)} alt='' />*/}
                   </>
                   }
                 </div>
