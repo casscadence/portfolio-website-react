@@ -134,7 +134,7 @@ const Project = ({setLoaderName, link}) => {
                   <div className='project-button-wrapper'><div className={`project-button ${button === 'first' ? 'active' : ''}`} onClick={() => setButton('first')}></div></div>
                   <div className='project-button-wrapper'><div className={`project-button ${button === 'second' ? 'active' : ''}`} onClick={() => setButton('second')}></div></div>
                   <div className='project-button-wrapper'><div className={`project-button ${button === 'third' ? 'active' : ''}`} onClick={() => setButton('third')}></div></div>
-                  <div className='project-button-wrapper'><div className={`project-button ${button === 'fourth' ? 'active' : ''}`} onClick={() => setButton('fourth')}></div></div>
+                  {/*<div className='project-button-wrapper'><div className={`project-button ${button === 'fourth' ? 'active' : ''}`} onClick={() => setButton('fourth')}></div></div>*/}
                 </div>
               </div>
               : 
