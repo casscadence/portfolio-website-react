@@ -1,5 +1,4 @@
-$colors: red, orange, yellow, #345d7e;
-//$colors: #f8b195, #c06c85, #6c5c7c, #345d7e;
+$colors: #f8b195, #c06c85, #6c5c7c, #345d7e;
 
 input[type='radio'] {
   display: none;
@@ -427,14 +426,14 @@ section {
         &.second{
             &:before {
                 //height: 20%;
-                height: 30%;
+                height: 15%;
             }
         }
 
         &.third {
             &:before {
                 //height: 40%;
-                height: 60%;
+                height: 30%;
             }
         }
 
