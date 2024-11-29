@@ -426,15 +426,13 @@ section {
 
         &.second{
             &:before {
-                //height: 20%;
-                height: 15%;
+                height: 20%;
             }
         }
 
         &.third {
             &:before {
-                //height: 40%;
-                height: 0%;
+                height: 40%;
             }
         }
 
