@@ -425,19 +425,21 @@ section {
 
         &.second{
             &:before {
-                height: 20%;
+                //height: 20%;
+                height: 30%;
             }
         }
 
         &.third {
             &:before {
-                height: 40%;
+                //height: 40%;
+                height: 60%;
             }
         }
 
         &.fourth {
             &:before {
-                height: 60%;
+                //height: 60%;
             }
         }
 
