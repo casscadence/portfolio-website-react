@@ -569,6 +569,12 @@ section {
             justify-content: space-between;
             order: 2;
 
+            @media (max-width: 600px) { 
+                div {
+                    padding: 0 10px;
+                }
+            }
+
             ul {                    
                 li {
                     font-size: 15px;
