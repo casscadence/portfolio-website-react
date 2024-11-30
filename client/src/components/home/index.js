@@ -149,7 +149,7 @@ const Home = ({loaderName, setLoaderName, setLink}) => {
                   <div className='home-text-wrapper'>
                     <div className={`welcome-header ${loaderName === 'loader-end' ? 'ready' : ''}`}>
                       <h1>Hi, I'm Arielle</h1>
-                      <div className='role'>+ Web Developer | 3D Modeler | Artist</div>
+                      <div className='role'>+ Web Developer | Programmer | Artist</div>
                     </div>
                   </div>
                   <div className='home-img-wrapper'>
@@ -262,7 +262,7 @@ const Home = ({loaderName, setLoaderName, setLink}) => {
                       <div>
                         <ul>
                           <li><a href="https://linkedin.com/in/arielle-bartee"><strong className='social-brand'>LinkedIn </strong><div className='arrow-mask'></div></a></li>
-                          <li><a href="https://join.skype.com/invite/eSqj1ldMJ7dH"><strong className='social-brand'>Skype </strong><div className='arrow-mask'></div></a></li>
+                          <li><a href="https://www.facebook.com/ariellebartee/"><strong className='social-brand'>Facebook </strong><div className='arrow-mask'></div></a></li>
                         </ul>
                       </div>
                       <div>
