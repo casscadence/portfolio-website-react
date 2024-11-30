@@ -419,21 +419,21 @@ section {
 
         &.first {
             &:before {
-                //height: 0%;
+                height: 0%;
             }
         }
 
         &.second{
             &:before {
                 //height: 20%;
-                //height: 30%;
+                height: 30%;
             }
         }
 
         &.third {
             &:before {
                 //height: 40%;
-                //height: 60%;
+                height: 60%;
             }
         }
 
@@ -498,24 +498,6 @@ section {
                 border: none;
                 transform: scale(2);
             }
-        }
-    }
-
-    .first {
-        &:before {
-            height: 0%;
-        }
-    }
-
-    .second{
-        &:before {
-            height: 30%;
-        }
-    }
-
-    .third {
-        &:before {
-            height: 60%;
         }
     }
 }
