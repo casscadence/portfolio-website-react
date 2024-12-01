@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
-import CV from '../../assets/images/resume/BarteeArielle_Resume.pdf';
+import CV from '../../assets/images/resume/barteearielle_resume.pdf';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHtml5, faCss3, faSass, faBootstrap, faJs, faReact, faAngular, faNodeJs, faJava, faPhp, faUnity, faGithub, } from '@fortawesome/free-brands-svg-icons';
 import { faLeaf, faDatabase, faPaintBrush, faPen } from '@fortawesome/free-solid-svg-icons';
